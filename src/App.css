@@ -1,51 +1,104 @@
-.App {
-  text-align: center;
+/*! Import area  */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://sudo-ui.netlify.app/components/components.css");
+@import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
+
+/*! Common styles here */
+
+/* Color variables here */
+:root {
+  --color-pri: #2F3841;
+  --text-sec: #2F3841;
+  --text-pri: hsl(233, 7%, 38%);
+  --primary-bg: hsl(0, 0%, 95%);
+  --color-text-bg: hsl(206, 51%, 92%);
+  --color-image-bg: hsl(197, 37%, 96%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #22201c;
+.container__main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  justify-content: initial;
+  align-items: initial;
 }
 
-.App-link {
-  color: #61dafb;
+/*!  Header style here */
+
+.container__main .main__header {
+  min-height: 15vh;
 }
 
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
+/* Header announcment-bar style here */
+.main__header .header__announcment-bar {
+  width: 100%;
+  height: 20%;
+  min-height: 1rem;
+  background-color: var(--color-text-bg);
+  font-weight: 500;
 }
 
-.brand-title span {
-  color: #ffde59;
+
+/* Header navbar style here */
+.header__navbar .nav {
+  background-color: var(--primary-bg);
+  height: auto;
+  height: 80%;
 }
 
-.brand-description {
-  font-size: 1.4rem;
+.nav__button-sec button {
+  background-color: var(--text-sec);
 }
 
-.links {
-  display: flex;
+/*! Fix section */
+
+.grid {
+  /*? Reseting gap here, Will fix it later */
+  gap: 0;
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
+.card i {
+  /*?Getting override by fontawesome stylesheet (Fix it)*/
+  display: flex !important;
+}
+
+.btns {
+  padding: .5rem;
+}
+
+/*! Card style here  */
+
+.card {
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 5px 10px var(--color-off-white);
+  transform: translateY(-5px);
+}
+
+/* Card upper section here */
+.card .card__sec-upper {
+  background-color: var(--color-image-bg);
+}
+
+/* Card lower section here */
+.card .card__sec-lower {
+  background-color: var(--color-text-bg);
+  padding: 0.5rem;
+}
+
+/*! Main footer style here */
+
+.main__footer {
+  margin-top: auto;
+  min-height: 2rem;
+}
+
+.main__footer h2 {
+  margin-top: 1rem;
+}
+
+.main__footer p {
+  margin-bottom: 1rem;
 }
