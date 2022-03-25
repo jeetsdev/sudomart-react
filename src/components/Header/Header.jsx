@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Header = () => {
 
     // Header icon component
@@ -20,7 +22,7 @@ export const Header = () => {
             <nav className="nav center__flex">
                 {/* Title section here */}
                 <div className="nav__title-sec">
-                    <h3 className="headline-3"> SudoMart </h3>
+                    <Link to={"/"}><h3 className="headline-3"> SudoMart </h3></Link>
                 </div>
                 {/* Search section here*/}
                 <div className="nav__search-sec display__none">
@@ -31,14 +33,9 @@ export const Header = () => {
                 </div>
                 {/* Button section here*/}
                 <div className="nav__button-sec center__flex">
-                    <a
-                        href="pages/login.html"
-                        className="btns btn__primary border__rad-4px"
-                    >
-                        Login
-                    </a>
-                    <HeaderIcon iconName={"fa-heart"}/>
-                    <HeaderIcon iconName={"fa-shopping-bag"}/>
+                    <Link to="/" className="btns btn__primary border__rad-4px">Login</Link>
+                    <HeaderIcon iconName={"fa-heart"} />
+                    <HeaderIcon iconName={"fa-shopping-bag"} />
                 </div>
             </nav>
         </nav>
