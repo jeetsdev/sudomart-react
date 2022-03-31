@@ -1,0 +1,50 @@
+@import url(../../App.css);
+@import url(../Home/Home.css);
+
+
+/*! Product site wrapper style here  */
+
+.product__site-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    justify-content: center;
+}
+
+
+/** Filter section style here */
+.site__filter-sec>* {
+    margin-left: 1rem;
+}
+
+.site__filter-sec form {
+    align-items: flex-start;
+}
+
+.filter__sec-title h3 {
+    margin-right: auto;
+}
+
+
+/** Prodcuts section cards style here */
+.site__product-sec {
+    padding: 0 1rem;
+}
+
+/** Gaps btw cards */
+.product__sec-cards {
+    gap: 1rem;
+}
+
+/* Product card style here */
+
+.details__sec-title{
+    color: var(--text-sec);
+}
+
+.card__upper-icon{
+    z-index: 99;
+}
+
+.card__sec-lower{
+    min-height: 8rem;
+}
