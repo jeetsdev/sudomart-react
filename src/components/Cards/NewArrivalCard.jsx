@@ -1,8 +1,9 @@
 
 export const NewArrivalCard = ({ cardImage, cardHeading, cardDiscription }) => {
     return <div className="card card__newarrival card__badge grid bg__shadow">
+
         {/* Card Upper section here */}
-        <p class="card__badge-icon border__rad-4px">New </p>
+        <p className="card__badge-icon border__rad-4px">New </p>
         <div className="card__sec-upper center__flex flex__dir-col">
             <div className="card__upper-image center__flex">
                 <img
@@ -12,6 +13,7 @@ export const NewArrivalCard = ({ cardImage, cardHeading, cardDiscription }) => {
                 />
             </div>
         </div>
+
         {/* Card Lower section here */}
         <div className="card__sec-lower center__flex flex__dir-col">
             <div className="lower__sec-top text-mid">New Arrivals</div>

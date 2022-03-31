@@ -1,4 +1,6 @@
 export { Header } from "./Header/Header"
 export { NewArrivalCard } from "./Cards/NewArrivalCard"
 export { CategoryCard } from "./Cards/CategoryCard"
+export { ProductCard } from "./Cards/ProductCard"
+export { Filter } from "./Filter/Filter"
 export { Footer } from "./Footer/Footer"
