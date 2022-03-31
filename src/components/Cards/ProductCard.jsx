@@ -36,8 +36,8 @@ export const ProductCard = ({ product }) => {
             <div className="card__sec-lower center__flex flex__dir-col">
                 <div className="center__flex lower__sec-details  flex__dir-col">
                     <p className="details__sec-title txt-center">{title}</p>
-                    <p>{[...Array(5)].map((item, index) => {
-                        return rating > index ? <span key={index} className="far fas fa-star"></span> : <span key={index} className="far fa-star"></span>
+                    <p className="details__sec-rating">{[...Array(5)].map((item, index) => {
+                        return rating > index ? <span key={index} className="far fas fa-star txt-sml txt-grey"></span> : <span key={index} className="far fa-star txt-sml txt-grey"></span>
                     }) }</p>
                     <p className="price__sec-current margin__tb-8px"> <span className="price__sec-prev">₹ {price * 2}</span> ₹ {price}</p>
                 </div>
