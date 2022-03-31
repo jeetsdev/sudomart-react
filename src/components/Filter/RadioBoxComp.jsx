@@ -1,4 +1,3 @@
-import { Action } from "history";
 import { useFilter } from "../../contexts/filter-context";
 
 export const RadioBoxComp = ({ id, name, labelText }) => {
