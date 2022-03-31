@@ -15,9 +15,8 @@ export const ProductProvider = ({ children }) => {
                 console.log(error.message)
             }
         })()
-        // console.log(productData);
     }, [])
-    return <ProductContext.Provider value={{productData}}>
+    return <ProductContext.Provider value={{ productData }}>
         {children}
     </ProductContext.Provider>
 }
