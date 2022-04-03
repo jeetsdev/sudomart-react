@@ -12,7 +12,7 @@ import "./Home.css"
 
 export const Home = () => {
     return <div className="">
-        <div className="container__main center__flex flex__dir-col">
+        <div className="container__main container__main-home center__flex flex__dir-col">
             {/* Header here */}
             <Header />
             {/* Main site wrapper here */}

@@ -26,6 +26,7 @@
 
 .container__main .main__header {
   min-height: 15vh;
+  border-bottom: 2px solid var(--color-text-bg);
 }
 
 /* Header announcment-bar style here */
@@ -47,6 +48,11 @@
 
 .nav__button-sec button {
   background-color: var(--text-sec);
+}
+
+.nav .nav__button-sec span {
+  color: var(--color-image-bg);
+  background-color: var(--color-pure-red);
 }
 
 /*! Fix section */
