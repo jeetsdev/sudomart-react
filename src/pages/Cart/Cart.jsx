@@ -4,8 +4,7 @@ import { useCart } from "../../contexts";
 import "./Cart.css"
 
 export const Cart = () => {
-    const { cartState } = useCart();
-    const { cartItem } = cartState;
+    const { cartState: { cartItem } } = useCart();
     return (
         <>
             <div className="container__main center__flex flex__dir-col">
@@ -14,6 +13,7 @@ export const Cart = () => {
                     <i className="fas fa-shopping-bag margin__lr-8px"></i>
                     My Cart
                 </h2>
+
                 {/* Checking cart items here */}
                 {cartItem.length === 0 ?
                     <div className="center__flex flex__dir-col cart__card-empty">
@@ -26,6 +26,7 @@ export const Cart = () => {
                         </Link>
                     </div>
                     : <div className="cart__site-wrapper grid grid__col-70-30">
+
                         {/* Item present here */}
                         <div className="cart__product-sec">
                             <div className="cart__product-item center__flex flex__dir-col">
