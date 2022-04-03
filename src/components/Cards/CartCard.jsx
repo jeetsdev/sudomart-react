@@ -21,21 +21,25 @@ export const CartCard = ({ item }) => {
                     return rating > index ? <span key={index} className="far fas fa-star txt-sml txt-grey"></span> : <span key={index} className="far fa-star txt-sml txt-grey"></span>
                 })}</p>
                 <div className="card__quantity center__flex">
-                    <button className="btns btn__primary-outline margin__lr-4px border__rad-4px" onClick={() => cartDispatch({
-                        type: INCREASE_ITEM_QTY,
-                        payload: {
-                            id: item._id,
-                            qty: item.inCartQty,
-                        },
-                    })}>+</button>
-                    <p className="center__flex margin__lr-8px">{inCartQty}</p>
                     <button className="btns btn__secondary-outline margin__lr-4px border__rad-4px" onClick={() => cartDispatch({
                         type: DECREASE_ITEM_QTY,
                         payload: {
                             id: item._id,
                             qty: item.inCartQty,
                         },
-                    })}>-</button>
+                    })}>
+                        -
+                    </button>
+                    <p className="center__flex margin__lr-8px">{inCartQty}</p>
+                    <button className="btns btn__primary-outline margin__lr-4px border__rad-4px" onClick={() => cartDispatch({
+                        type: INCREASE_ITEM_QTY,
+                        payload: {
+                            id: item._id,
+                            qty: item.inCartQty,
+                        },
+                    })}>
+                        +
+                    </button>
                 </div>
                 <p className="center__flex card__action-btns">
                     {isWhislisted ? <i className="fas fa-heart border__rad-full center__flex margin-8px"></i> : <i className="far fa-heart border__rad-full center__flex margin-8px"></i>}
