@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+import { useCart } from "../../contexts";
+import { ACTION_TYPE } from "../../utils";
+
 export const ProductCard = ({ product }) => {
-    const { img, altImage, title, price, isWhislisted,rating } = product;
+    const { img, altImage, title, price, isWhislisted, rating, discountPrecentage,_id } = product;
+    const { cartState,cartDispatch } = useCart();
+    const {ADD_TO_CART}=ACTION_TYPE
     return <div className="product">
         {/* E-Commerce product card here */}
         <div className="card card__e-commerce card__badge grid">
@@ -11,7 +17,6 @@ export const ProductCard = ({ product }) => {
                 <div className="card__upper-icon center__flex">
                     {isWhislisted ? <i className="fas fa-heart border__rad-full center__flex margin-8px"></i> : <i className="far fa-heart border__rad-full center__flex margin-8px"></i>}
                 </div>
-
                 {/* Card image here */}
                 <div className="card__upper-image center__flex">
                     <img
@@ -23,11 +28,12 @@ export const ProductCard = ({ product }) => {
 
                 {/*Card overlay section here  */}
                 <div className="card__upper-overlay">
-                    <div className="upper__overlay-icon">
-                        <p className="shopping__cart-icon center__flex"> + </p>
+                    <div className="upper__overlay-icon" onClick={() => cartDispatch({ type: ADD_TO_CART,payload:product})}>
+                        {/* <p className="shopping__cart-icon center__flex"> + </p>
+                        <p className="shopping__cart-icon center__flex"> - </p> */}
                     </div>
                     <div className="upper__overlay-btn">
-                        <button className="btns btn__primary">Buy Now</button>
+                        {cartState.cartItem.find(item => item._id === _id) ? <Link to="/cart"><button className="btns btn__primary">Go to Cart</button></Link> : <button className="btns btn__primary" onClick={() => cartDispatch({ type: ADD_TO_CART, payload: product })}>Add to Cart</button>}
                     </div>
                 </div>
             </div>
@@ -39,7 +45,7 @@ export const ProductCard = ({ product }) => {
                     <p className="details__sec-rating">{[...Array(5)].map((item, index) => {
                         return rating > index ? <span key={index} className="far fas fa-star txt-sml txt-grey"></span> : <span key={index} className="far fa-star txt-sml txt-grey"></span>
                     }) }</p>
-                    <p className="price__sec-current margin__tb-8px"> <span className="price__sec-prev">₹ {price * 2}</span> ₹ {price}</p>
+                    <p className="price__sec-current margin__tb-8px"> <span className="price__sec-prev">₹ {price}</span> ₹ {price*discountPrecentage/100}</p>
                 </div>
             </div>
         </div>

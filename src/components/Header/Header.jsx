@@ -1,16 +1,9 @@
 import { Link } from "react-router-dom"
+import { useCart } from "../../contexts"
+import { HeaderIcon } from "./HeaderIcon"
 
 export const Header = () => {
-
-    // Header icon component
-    const HeaderIcon = ({ iconName }) => {
-        return <a href="pages/cart.html" className="bagde__sec margin-1rem">
-            <i className={`fas ${iconName}`} />
-            <span className="bagde__sec-text border__rad-full center__flex">
-                0
-            </span>
-        </a>
-    }
+    const { cartState } = useCart();
 
     return <header className="main__header">
         {/* Announcment bar here */}
@@ -33,9 +26,11 @@ export const Header = () => {
                 </div>
                 {/* Button section here*/}
                 <div className="nav__button-sec center__flex">
-                    <Link to="/" className="btns btn__primary border__rad-4px">Login</Link>
-                    <HeaderIcon iconName={"fa-heart"} />
-                    <HeaderIcon iconName={"fa-shopping-bag"} />
+                    <Link to="/products" className="btns btn__primary margin__lr-8px border__rad-4px">Shop</Link>
+                    <i className="fas fa-sign-in-alt margin-8px"></i>
+                    {/* <i className="fas fa-sign-out-alt"></i> */}
+                    <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={0} />
+                    <HeaderIcon iconName={"fa-shopping-bag"} route="/cart" quantity={cartState.cartItem.length} />
                 </div>
             </nav>
         </nav>

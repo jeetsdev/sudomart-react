@@ -1,0 +1,135 @@
+@import "../../App.css";
+
+/*! Cart items style here */
+
+.main__title {
+    text-align: center;
+}
+
+.cart__product-item {
+    padding:0 1rem;
+    min-height: 20rem;
+    justify-content: flex-start;
+}
+
+.cart__product-item .card__horizontal{
+    max-width: 40rem;
+}
+
+/*! Cart card style here */
+
+.cart__card{
+    position: relative;
+    background-color: var(--color-text-bg);
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+/* Card badge icon style */
+
+.cart__card-empty{
+    min-height: 50vh;
+}
+
+.card__badge-icon{
+    font-size: 10px;
+    background-color: var(--color-green);
+}
+
+.cart__card-sec{
+    justify-content: space-around;
+}
+
+.cart__card-sec img {
+    object-fit: contain;
+    max-width: 10rem;
+    max-height: 10rem;
+}
+
+.cart__card-title{
+    width: 12ch;
+}
+
+.card__quantity button{
+    width: 15px;
+    height: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__quantity p{
+    min-width: 2ch;
+}
+
+.price__sec{
+    min-width: 6ch;
+}
+.price__sec-prev {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-grey);
+    text-decoration: line-through;
+}
+
+.price__sec-crr {
+    font-weight: bold;
+}
+
+.card__action-btns i{
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.text__green{
+    color: var(--color-green);
+}
+
+
+/*! Cart product quantity section style  */
+
+.details__sec-quantity {
+    justify-content: flex-start;
+}
+
+.details__sec-quantity input {
+    max-width: 3rem;
+    outline: none;
+    text-align: center;
+    border: 2px solid var(--color-off-white);
+}
+
+/*! Cart price section style here */
+.cart__details-sec,
+.cart__details-order {
+    position: sticky;
+    top: 2rem;
+}
+
+.cart__details-order {
+    background-color: var(--color-text-bg);
+    border-radius: 5px;
+}
+
+.cart__details-order>* {
+    border-bottom: 2px solid var(--color-off-white);
+}
+
+.cart__details-order div:last-child {
+    border-bottom: none;
+}
+
+.order__details-item>*>p:nth-child(1) {
+    padding: .5rem 0;
+    margin-right: auto;
+}
+
+.order__details-total {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.order__details-place button {
+    width: 100%;
+}

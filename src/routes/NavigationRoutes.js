@@ -1,13 +1,14 @@
 import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "../pages/Home/Home";
-import { ProductListing } from "../pages/ProductListing/ProductListing";
+import { Cart, Home, ProductListing, Error } from "../pages";
 
 export const NavigationRoutes = () => {
   return (
     <Routes>
+      <Route path="*" element={<Error />} />
       <Route path="/" element={<Home />} />
-      <Route path="/products" element={<ProductListing/>} />
+      <Route path="/products" element={<ProductListing />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/mockman" element={<Mockman />} />
     </Routes>
   );

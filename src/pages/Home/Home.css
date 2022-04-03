@@ -7,6 +7,11 @@ body {
     ;
 }
 
+/*! Homepage Header style her */
+.container__main-home .main__header {
+    border-bottom: none;
+}
+
 /*! Main site wrappers style   */
 
 /* Site intro section style here  */
