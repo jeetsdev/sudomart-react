@@ -9,6 +9,7 @@ export const FilterProvider = ({ children }) => {
     const [filterState, filterDispatch] = useReducer(filterReducer, {
         sortBy: "",
         category: [],
+        subCategory:[],
         rating: 1,
         priceRange: 1000,
     })
