@@ -37,11 +37,13 @@
 
 /* Product card style here */
 
+
 .details__sec-title{
     color: var(--text-sec);
 }
 
-.card__upper-icon{
+.card__upper-icon i{
+    background-color: var(--color-text-bg);
     z-index: 99;
 }
 

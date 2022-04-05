@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { useCart, useWishlist } from "../../contexts";
 import { ACTION_TYPE } from "../../utils";
 
-export const ProductCard = ({ product }) => {
+
+export const WishlistCard = ({ product }) => {
+
     const { img, altImage, title, price, rating, discountPrecentage, _id } = product;
-    const { cartState, cartDispatch } = useCart();
+    const { cartState: { cartItem
+    }, cartDispatch } = useCart();
     const { wishlistState, wishlistDispatch } = useWishlist();
 
     const { ADD_TO_CART, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = ACTION_TYPE;
@@ -34,7 +37,9 @@ export const ProductCard = ({ product }) => {
 
                 {/* Wishlist icon here*/}
                 <div className="card__upper-icon center__flex">
-                    {wishlistState.wishlistItem.find(item => item._id === _id) ? <i className="fas fa-heart border__rad-full center__flex margin-8px" onClick={() => removeFromWishlistHandler(product)}></i> : <i className="far fa-heart border__rad-full center__flex margin-8px" onClick={() => addToWishlistHandler(product)}></i>}
+                    {wishlistState.wishlistItem.find(item => item._id === _id) ?
+                        <i className="fas fa-heart border__rad-full center__flex margin-8px" onClick={() => removeFromWishlistHandler(product)}></i> :
+                        <i className="far fa-heart border__rad-full center__flex margin-8px" onClick={() => addToWishlistHandler(product)}></i>}
                 </div>
                 {/* Card image here */}
                 <div className="card__upper-image center__flex">
@@ -47,10 +52,8 @@ export const ProductCard = ({ product }) => {
 
                 {/*Card overlay section here  */}
                 <div className="card__upper-overlay">
-                    <div className="upper__overlay-icon" onClick={() => cartDispatch({ type: ADD_TO_CART, payload: product })}>
-                    </div>
                     <div className="upper__overlay-btn">
-                        {cartState.cartItem.find(item => item._id === _id) ? <Link to="/cart"><button className="btns btn__primary">Go to Cart</button></Link> : <button className="btns btn__primary" onClick={() => cartDispatch({ type: ADD_TO_CART, payload: product })}>Add to Cart</button>}
+                        {cartItem.find(item => item._id === _id) ? <Link to="/cart"><button className="btns btn__primary">Go to Cart</button></Link> : <button className="btns btn__primary" onClick={() => cartDispatch({ type: ADD_TO_CART, payload: product })}>Add to Cart</button>}
                     </div>
                 </div>
             </div>

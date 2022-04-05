@@ -1,6 +1,5 @@
 import { Filter, Footer, Header, ProductCard } from "../../components"
-import { useFilter } from "../../contexts/filter-context";
-import { useProduct } from "../../contexts/product-context"
+import { useFilter, useProduct } from "../../contexts";
 import { filterProduct } from "../../utils/filterProduct";
 import "./ProductListing.css"
 

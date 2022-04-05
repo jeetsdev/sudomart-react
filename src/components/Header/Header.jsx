@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
-import { useCart } from "../../contexts"
+import { useCart, useWishlist } from "../../contexts"
 import { HeaderIcon } from "./HeaderIcon"
 
 export const Header = () => {
     const { cartState } = useCart();
+    const { wishlistState } = useWishlist();
 
     return <header className="main__header">
 
@@ -33,7 +34,7 @@ export const Header = () => {
                 <div className="nav__button-sec center__flex">
                     <Link to="/products" className="btns btn__primary margin__lr-8px border__rad-4px">Shop</Link>
                     <i className="fas fa-sign-in-alt margin-8px"></i>
-                    <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={0} />
+                    <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={wishlistState.wishlistItem.length} />
                     <HeaderIcon iconName={"fa-shopping-bag"} route="/cart" quantity={cartState.cartItem.length} />
                 </div>
             </nav>

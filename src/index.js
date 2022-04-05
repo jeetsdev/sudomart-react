@@ -8,6 +8,7 @@ import {
   CartProvider,
   FilterProvider,
   ProductProvider,
+  WishlistProvider,
 } from "./contexts";
 
 // Call make Server
@@ -17,11 +18,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <CartProvider>
-        <FilterProvider>
-          <ProductProvider>
-            <App />
-          </ProductProvider>
-        </FilterProvider>
+        <WishlistProvider>
+          <FilterProvider>
+            <ProductProvider>
+              <App />
+            </ProductProvider>
+          </FilterProvider>
+        </WishlistProvider>
       </CartProvider>
     </Router>
   </React.StrictMode>,
