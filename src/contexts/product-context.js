@@ -10,9 +10,9 @@ export const ProductProvider = ({ children }) => {
     (async () => {
       try {
         let res = await axios.get("/api/products");
-        setProductData(res.data.products);
+        setProductData(res?.data.products);
       } catch (error) {
-        console.log(error.message);
+        console.error(error.message);
       }
     })();
   }, []);
