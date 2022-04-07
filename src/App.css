@@ -57,10 +57,10 @@
 
 /*! Fix section */
 
-.grid {
-  /*? Reseting gap here, Will fix it later */
+/*? Reseting gap here, Will fix it later */
+/* .grid {
   gap: 0;
-}
+} */
 
 .card i {
   /*?Getting override by fontawesome stylesheet (Fix it)*/

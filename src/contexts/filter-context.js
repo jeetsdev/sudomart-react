@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useReducer } from "react";
-import { filterReducer } from "../reducer/filterReducer";
+import { filterReducer } from "../reducer";
 
 const FilterContext = createContext(null);
 export const useFilter = () => useContext(FilterContext);
@@ -9,6 +9,7 @@ export const FilterProvider = ({ children }) => {
     const [filterState, filterDispatch] = useReducer(filterReducer, {
         sortBy: "",
         category: [],
+        subCategory:[],
         rating: 1,
         priceRange: 1000,
     })

@@ -9,8 +9,18 @@ import {
     StickerOne,
 } from "../../assets/index"
 import "./Home.css"
+import { useFilter } from "../../contexts"
+import { ACTION_TYPE } from "../../utils"
 
 export const Home = () => {
+    const { filterDispatch } = useFilter();
+    const { CATEGORIES, CLEAR_ALL, SUBCATEGORIES } = ACTION_TYPE;
+
+    const catClickHandler = (type,cat) => {
+        filterDispatch({ type: CLEAR_ALL });
+        filterDispatch({ type: type, payload: `${cat}` });
+    }
+
     return <div className="">
         <div className="container__main container__main-home center__flex flex__dir-col">
             {/* Header here */}
@@ -45,9 +55,12 @@ export const Home = () => {
                 <section className="site__category-sec center__flex flex__dir-col">
                     <h2 className="headline-2 margin-2rem">Shop By Categories</h2>
                     <div className="grid">
-                        <Link to="/products" > <CategoryCard categoryName={"Tees"} cardImage={TeesFour} /></Link>
-                        <Link to="/products" > <CategoryCard categoryName={"Hoodies"} cardImage={HoodieOne} /></Link>
-                        <Link to="/products" > <CategoryCard categoryName={"Stickers"} cardImage={StickerOne} /></Link>
+                        <Link to="/products" onClick={() => { catClickHandler(CATEGORIES,"TEES")}}> <CategoryCard categoryName={"Tees"} cardImage={TeesFour} />
+                        </Link>
+                        <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "HOODIES") }}> <CategoryCard categoryName={"Hoodies"} cardImage={HoodieOne} />
+                        </Link>
+                        <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "STICKERS") }}> <CategoryCard categoryName={"Stickers"} cardImage={StickerOne} />
+                        </Link>
                     </div>
                 </section>
                 {/* Site brands here */}
@@ -58,11 +71,15 @@ export const Home = () => {
                     <div className="newarrival__sec-cards grid grid__col-50-50">
                         <div>
                             {/* New Arrivals card here */}
-                            <NewArrivalCard cardImage={IplTshirtOne} cardHeading={"IPL COLLECTION"} cardDiscription={"Check out the new IPL Tees collection here."} />
+                            <Link to={"/products"} onClick={() => { catClickHandler(SUBCATEGORIES, "IPL TEES") }}>
+                                <NewArrivalCard cardImage={IplTshirtOne} cardHeading={"IPL COLLECTION"} cardDiscription={"Check out the new IPL Tees collection here."} />
+                            </Link>
                         </div>
                         <div>
                             {/* New Arrivals card here */}
-                            <NewArrivalCard cardImage={PoloTshirtOne} cardHeading={"POLO NECK TEES"} cardDiscription={"Check out the new Polo Neck Tees collection here."} />
+                            <Link to={"/products"} onClick={() => { catClickHandler(SUBCATEGORIES, "POLO TEES") }}>
+                                <NewArrivalCard cardImage={PoloTshirtOne} cardHeading={"POLO NECK TEES"} cardDiscription={"Check out the new Polo Neck Tees collection here."} />
+                            </Link>
                         </div>
                     </div>
                 </section>

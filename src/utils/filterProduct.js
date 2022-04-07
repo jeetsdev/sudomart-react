@@ -3,6 +3,7 @@ import {
   filterByPrice,
   filterByCategory,
   filterByRating,
+  filterBySubCategory,
 } from "./index";
 
 export const filterProduct = (state, productData) => {
@@ -12,6 +13,10 @@ export const filterProduct = (state, productData) => {
 
   if (state.category.length) {
     productData = filterByCategory(state, productData);
+  }
+
+  if (state.subCategory.length) {
+    productData = filterBySubCategory(state, productData);
   }
 
   if (state.sortBy !== "") {

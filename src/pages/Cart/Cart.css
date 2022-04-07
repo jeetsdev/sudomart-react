@@ -68,6 +68,7 @@
 }
 .price__sec-prev {
     font-size: 1.2rem;
+    margin-left: 1rem;
     font-weight: 400;
     color: var(--color-grey);
     text-decoration: line-through;

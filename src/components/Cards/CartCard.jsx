@@ -1,11 +1,28 @@
-import { useCart } from "../../contexts";
+import { useCart, useWishlist } from "../../contexts";
 import { ACTION_TYPE } from "../../utils";
 
 export const CartCard = ({ item }) => {
-    const { INCREASE_ITEM_QTY, DECREASE_ITEM_QTY, REMOVE_FROM_CART } = ACTION_TYPE
-    const { img, inCartQty, price, discountPrecentage, title, _id, rating, isWhislisted
+    const { INCREASE_ITEM_QTY, DECREASE_ITEM_QTY, REMOVE_FROM_CART, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = ACTION_TYPE
+    const { img, inCartQty, price, discountPrecentage, title, _id, rating,
     } = item;
     const { cartDispatch } = useCart()
+    const { wishlistState, wishlistDispatch } = useWishlist();
+
+    // Add to wishlist handler
+    const addToWishlistHandler = (product) => {
+        wishlistDispatch({
+            type: ADD_TO_WISHLIST,
+            payload: product
+        })
+    }
+
+    // Remove From Wishlist Handler
+    const removeFromWishlistHandler = (product) => {
+        wishlistDispatch({
+            type: REMOVE_FROM_WISHLIST,
+            payload: product._id
+        })
+    }
     return <>
         <div className="cart__card card__badge grid grid__col-50-50 margin-1rem">
             <p className="card__badge-icon">{discountPrecentage}% off</p>
@@ -42,7 +59,7 @@ export const CartCard = ({ item }) => {
                     </button>
                 </div>
                 <p className="center__flex card__action-btns">
-                    {isWhislisted ? <i className="fas fa-heart border__rad-full center__flex margin-8px"></i> : <i className="far fa-heart border__rad-full center__flex margin-8px"></i>}
+                    {wishlistState.wishlistItem.find(item => item._id === _id) ? <i className="fas fa-heart border__rad-full center__flex margin-8px" onClick={() => removeFromWishlistHandler(item)}></i> : <i className="far fa-heart border__rad-full center__flex margin-8px" onClick={() => addToWishlistHandler(item)}></i>}
                     <i className="fas fa-trash border__rad-full center__flex margin-8px" onClick={() => cartDispatch({
                         type: REMOVE_FROM_CART,
                         payload: _id
