@@ -34,3 +34,7 @@ React JS
 * Wishlist management
 
 ## Demo
+
+https://user-images.githubusercontent.com/44586579/163730347-102293e3-3d36-44f0-a333-a4966b6e4039.mp4
+
+
