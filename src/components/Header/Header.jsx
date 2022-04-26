@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom"
-import { useCart, useWishlist } from "../../contexts"
-import { HeaderIcon } from "./HeaderIcon"
+import { useAuth, useCart, useWishlist } from "../../contexts"
+import { FaUserCircle } from "react-icons/fa"
+import { BsFillHeartFill, BsFillBagCheckFill } from "react-icons/bs"
 
 export const Header = () => {
     const { cartState } = useCart();
     const { wishlistState } = useWishlist();
+    const { authState: { authToken }, signOutHandler } = useAuth();
 
     return <header className="main__header">
 
@@ -32,10 +34,35 @@ export const Header = () => {
 
                 {/* Button section here*/}
                 <div className="nav__button-sec center__flex">
-                    <Link to="/products" className="btns btn__primary margin__lr-8px border__rad-4px">Shop</Link>
-                    <i className="fas fa-sign-in-alt margin-8px"></i>
-                    <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={wishlistState.wishlistItem.length} />
-                    <HeaderIcon iconName={"fa-shopping-bag"} route="/cart" quantity={cartState.cartItem.length} />
+                    {authToken && <button className="btns btn__secondary" onClick={() => signOutHandler()}>Logout</button>}
+                    <Link to="/products">
+                        <button className="btns btn__secondary margin__lr-8px border__rad-4px">Shop</button>
+                    </Link>
+                    {
+                        authToken ?
+                            <Link to={"/profile"} className="nav__sec-user">
+                                <FaUserCircle className="nav__icons" />
+                            </Link>
+                            :
+                            <Link to={"/login"}>
+                                <button className="btns btn__primary border__rad-4px margin__lr-8px">Login</button>
+                            </Link>
+                    }
+                    <Link to={`/wishlist`} className="bagde__sec bagde__sec-wishlist center__flex">
+                        <BsFillHeartFill className="nav__icons" />
+                        <span className="bagde__sec-text border__rad-full center__flex">
+                            {wishlistState?.wishlistItem.length}
+                        </span>
+                    </Link>
+                    <Link to={`/cart`} className="bagde__sec bagde__sec-cart center__flex">
+                        <BsFillBagCheckFill className="nav__icons" />
+                        <span className="bagde__sec-text border__rad-full center__flex">
+                            {cartState?.cartItem.length}
+                        </span>
+                    </Link>
+
+                    {/* <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={wishlistState.wishlistItem.length} />
+                    <HeaderIcon iconName={"fa-shopping-bag"} route="/cart" quantity={cartState.cartItem.length} /> */}
                 </div>
             </nav>
         </nav>

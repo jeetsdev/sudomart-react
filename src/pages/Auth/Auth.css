@@ -1,0 +1,69 @@
+/*! Login container style here */
+
+.container__main-login {
+    background-color: var(--color-text-bg);
+    border-radius: 5px;
+    margin-top: 2rem;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+/* Title here */
+.container__main-login h4 {
+    font-weight: 900;
+}
+
+/* Inputs wrapper style */
+.main__login-inputs {
+    padding: .5rem 1rem;
+    position: relative;
+    width: 90%;
+    justify-content: flex-start;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid var(--text-pri);
+}
+
+/* inputs style */
+.main__login-inputs input {
+    padding: 5px;
+    outline: none;
+    color: inherit;
+    border: none;
+    background-color: inherit;
+}
+
+.login__remember-sec input {
+    background-color: inherit;
+}
+
+/* Validation error style */
+.validation-error {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    color: var(--color-pure-red);
+    font-weight: 900;
+    z-index: 2;
+}
+
+/* Icons style */
+.main__login-inputs .icons {
+    font-size: 1.2rem;
+}
+
+/* toggle password visibilty icon style */
+.toggle-pass {
+    cursor: pointer;
+    min-width: 1.5rem;
+    margin-left: auto;
+}
+
+.container__main-login .btns {
+    width: 90%;
+    margin: 0 1rem;
+}
+
+.container__main-login .btn-login {
+    margin: .5rem 1rem;
+}
