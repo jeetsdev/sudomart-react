@@ -7,3 +7,7 @@ export { WishlistCard } from "./Cards/WishlistCard"
 export { OrderSummaryCard } from "./Cards/OrderSummaryCard"
 export { Filter } from "./Filter/Filter"
 export { Footer } from "./Footer/Footer"
+export { RequireAuth } from "./Authentication/RequireAuth";
+export { MyToast } from "./MyToast/MyToast";
+
+

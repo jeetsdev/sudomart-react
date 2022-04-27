@@ -31,7 +31,7 @@ export const Cart = () => {
                         <div className="cart__product-sec">
                             <div className="cart__product-item center__flex flex__dir-col">
                                 {cartItem.map(item => {
-                                    return <CartCard item={item} key={Math.random() * 100} />
+                                    return <CartCard product={item} key={Math.random() * 100} />
                                 })}
                             </div>
                         </div>

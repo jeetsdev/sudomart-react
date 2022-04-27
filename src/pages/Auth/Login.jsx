@@ -13,7 +13,6 @@ export const Login = () => {
 
     // Auth context values here 
     const { loginFormHandler, authState: { error, authToken }, authDispatch } = useAuth();
-    console.log('authToken: ', authToken);
     const { SET_ERROR } = ACTION_TYPE
     const navigate = useNavigate();
 
@@ -27,7 +26,6 @@ export const Login = () => {
 
     // On submit handler 
     const formSubmitHandler = (event) => {
-        console.log("getting called");
         event.preventDefault();
         loginFormHandler(loginFormData, rememberMe);
     }

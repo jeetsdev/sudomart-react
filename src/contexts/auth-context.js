@@ -66,8 +66,6 @@ export const AuthProvider = ({ children }) => {
 					status,
 					data: { encodedToken, foundUser },
 				} = res;
-				console.log("res: ", res);
-
 				if (status === 200) {
 					// If remember me is true then remember
 					if (rememberMe) {
@@ -84,7 +82,9 @@ export const AuthProvider = ({ children }) => {
 							userName: foundUser?.userName,
 						},
 					});
-					navigate("/", { replace: true });
+					navigate(`/products`, {
+						replace: true,
+					});
 					toast.success(`Welcome back ${foundUser?.userName}`);
 				}
 			} catch (error) {
@@ -117,7 +117,7 @@ export const AuthProvider = ({ children }) => {
 			type: USER_LOGOUT,
 		});
 		toast.success("Sign out successfull");
-		navigate("/");
+		navigate("/products");
 		localStorage.removeItem("encoded-token");
 		localStorage.removeItem("userData");
 	};
