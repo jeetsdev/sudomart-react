@@ -2,7 +2,7 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "./Auth.css"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../contexts";
 import { useEffect } from "react";
@@ -15,6 +15,7 @@ export const Login = () => {
     const { loginFormHandler, authState: { error, authToken }, authDispatch } = useAuth();
     const { SET_ERROR } = ACTION_TYPE
     const navigate = useNavigate();
+    const location = useLocation();
 
     // Formdata state here
     const [loginFormData, setloginFormData] = useState({
@@ -46,7 +47,8 @@ export const Login = () => {
 
     // Checking if alredy login
     useEffect(() => {
-        if (authToken) { navigate('/products') }
+        // 
+        if (authToken) { navigate(`${location?.state?.from?.pathname}`) }
         // Setting intial error to empty
         authDispatch({
             type: SET_ERROR,

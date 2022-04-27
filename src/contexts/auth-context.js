@@ -9,7 +9,7 @@ import { ACTION_TYPE, validateEmail, validatePassword } from "../utils";
 const AuthContext = createContext();
 const token = localStorage.getItem("encoded-token");
 const userData = JSON.parse(localStorage.getItem("userData"));
-const { SET_ERROR, USER_LOGIN, USER_LOGOUT } = ACTION_TYPE;
+const { SET_ERROR, USER_LOGIN, USER_LOGOUT, USER_SIGNUP } = ACTION_TYPE;
 
 export const AuthProvider = ({ children }) => {
 	const navigate = useNavigate();
@@ -112,6 +112,47 @@ export const AuthProvider = ({ children }) => {
 		}
 	};
 
+	// Login form handler here
+	const signUpFormHandler = async (sigUpData) => {
+		if (validateEmailAndPass(sigUpData.email, sigUpData.password)) {
+			dispatch({
+				type: SET_ERROR,
+				payload: {
+					passwordError: "",
+					emailError: "",
+				},
+			});
+			try {
+				let res = await axios.post("/api/auth/signup", sigUpData);
+				const {
+					status,
+					data: { encodedToken, createdUser },
+				} = res;
+				if (status === 201) {
+					localStorage.setItem("encoded-token", encodedToken);
+					localStorage.setItem(
+						"userData",
+						JSON.stringify(createdUser),
+					);
+					dispatch({
+						type: USER_SIGNUP,
+						payload: {
+							authToken: encodedToken,
+							userName: createdUser?.userName,
+						},
+					});
+					navigate(`/products`, {
+						replace: true,
+					});
+					toast.success(`Happy to have you ${createdUser?.userName}`);
+				}
+			} catch (error) {
+				toast.error("Some error occured in signup.");
+			}
+		}
+	};
+
+	// Sign out handler
 	const signOutHandler = () => {
 		dispatch({
 			type: USER_LOGOUT,
@@ -128,6 +169,7 @@ export const AuthProvider = ({ children }) => {
 				authState: state,
 				authDispatch: dispatch,
 				loginFormHandler,
+				signUpFormHandler,
 				signOutHandler,
 			}}>
 			{children}
