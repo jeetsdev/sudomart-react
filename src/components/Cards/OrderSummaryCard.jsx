@@ -6,17 +6,17 @@ export const OrderSummaryCard = () => {
 
     // Totle price calculation here
     const totalPrice = cartItem.length === 0 ? 0 : cartItem.reduce((acc, crr) => {
-        return acc + (crr.price * crr.inCartQty)
+        return acc + (crr.price * crr.qty)
     }, 0);
 
     // Totle quantity here
     const totalQty = cartItem.length === 0 ? 0 : cartItem.reduce((acc, crr) => {
-        return acc + crr.inCartQty
+        return acc + crr.qty
     }, 0);
 
     // discountPrice calculation here
     const discountPrice = (cartItem.length === 0 ? 0 : cartItem.reduce((acc, crr) => {
-        return acc + ((crr.price * crr.discountPrecentage * crr.inCartQty) / 100)
+        return acc + ((crr.price * crr.discountPrecentage * crr.qty) / 100)
     }, 0)
     );
 

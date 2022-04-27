@@ -1,130 +1,149 @@
 @import "../../App.css";
 
 body {
-    background-color: var(--primary-bg);
-    font-family: 'Poppins',
-        sans-serif;
-    ;
+	background-color: var(--primary-bg);
+	font-family: "Poppins", sans-serif;
 }
 
 /*! Homepage Header style her */
 .container__main-home .main__header {
-    border-bottom: none;
+	border-bottom: none;
+}
+
+.nav__icons {
+	font-size: 2rem;
+	margin: 1rem;
+	opacity: 0.7;
+    transition: opacity .3s ease-in-out;
+}
+
+.nav__icons:hover {
+	opacity: 1;
+}
+
+.bagde__sec .bagde__sec-text {
+	left: 2em;
+    top: .5rem;
+}
+
+.nav__sec-user{
+    transform: translateY(3px);
+}
+
+.bagde__sec-cart{
+    transform: translateY(-3px);
 }
 
 /*! Main site wrappers style   */
 
 /* Site intro section style here  */
 .landing__site-wrapper .site__intro-sec {
-    align-items: center;
-    gap: 0;
-    min-height: 80vh;
-    position: relative;
-    background-color: var(--intro-sec-bg);
+	align-items: center;
+	gap: 0;
+	min-height: 80vh;
+	position: relative;
+	background-color: var(--intro-sec-bg);
 }
 
 /* White box near top left corner style */
 .site__intro-sec .intro__sec-box {
-    position: absolute;
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--color-pure-white);
-    background-color: var(--color-image-bg);
+	position: absolute;
+	width: 3rem;
+	height: 3rem;
+	background-color: var(--color-pure-white);
+	background-color: var(--color-image-bg);
 }
 
 .site__intro-sec .intro__sec-box:nth-child(1) {
-    top: 0;
-    left: 0;
+	top: 0;
+	left: 0;
 }
 
 .site__intro-sec .intro__sec-box:nth-child(2) {
-    top: 3rem;
-    left: 3rem;
+	top: 3rem;
+	left: 3rem;
 }
 
 /* Intro section text style here */
 .site__intro-sec .intro__sec-text {
-    text-align: center;
-    min-height: 100%;
-    width: 100%;
-    background-color: var(--color-text-bg);
-
+	text-align: center;
+	min-height: 100%;
+	width: 100%;
+	background-color: var(--color-text-bg);
 }
 
-.site__intro-sec .intro__sec-text>* {
-    width: 80%;
+.site__intro-sec .intro__sec-text > * {
+	width: 80%;
 }
 
 .intro__sec-text .headline-1 {
-    font-size: 4rem;
-    font-weight: 900;
+	font-size: 4rem;
+	font-weight: 900;
 }
 
 .intro__sec-text p {
-    font-size: 2.5rem;
-    line-height: 3rem;
-    color: var(--text-sec);
+	font-size: 2.5rem;
+	line-height: 3rem;
+	color: var(--text-sec);
 }
 
 .intro__sec-text p i {
-    color: var(--text-sec);
+	color: var(--text-sec);
 }
 
 .intro__sec-text a {
-    max-width: 10rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    background-color: var(--text-sec);
+	max-width: 10rem;
+	padding: 1rem;
+	margin-top: 2rem;
+	background-color: var(--text-sec);
 }
 
-
 .intro__sec-text a i {
-    transform: rotate(-90deg);
+	transform: rotate(-90deg);
 }
 
 /* Intro section image style here */
 .site__intro-sec .intro__sec-image {
-    background-color: var(--color-image-bg);
+	background-color: var(--color-image-bg);
 }
 
 .intro__sec-image .image__container {
-    min-width: 30rem;
+	min-width: 30rem;
 }
 
 .image-res {
-    max-height: 100%;
+	max-height: 100%;
 }
 
 /*! Category section style here  */
 
 .site__category-sec,
 .site__newarrival-sec {
-    margin: 2rem 0;
+	margin: 2rem 0;
 }
 
 .site__category-sec .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    max-width: 90%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+	max-width: 90%;
 }
 
-.category__sec{
-    background-color: var(--color-image-bg);
+.category__sec {
+	background-color: var(--color-image-bg);
 }
-
 
 /*! New arrivals section style here  */
 
 .newarrival__sec-cards {
-    height: initial;
-    width: 90%;
-    gap: 1rem;
+	height: initial;
+	width: 90%;
+	gap: 1rem;
 }
 
 .newarrival__sec-cards .card__sec-upper {
-    background-color: var(--color-image-bg);
+	background-color: var(--color-image-bg);
 }
 
 .newarrival__sec-cards .card__sec-lower {
-    background-color: var(--color-text-bg);
+	background-color: var(--color-text-bg);
 }

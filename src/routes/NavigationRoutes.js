@@ -1,16 +1,31 @@
 import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
-import { Cart, Home, ProductListing, Error, Wishlist } from "../pages";
+import { RequireAuth } from "../components";
+import {
+	Cart,
+	Home,
+	ProductListing,
+	Error,
+	Wishlist,
+	Login,
+	SignUp,
+} from "../pages";
 
 export const NavigationRoutes = () => {
-  return (
-    <Routes>
-      <Route path="*" element={<Error />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<ProductListing />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/wishlist" element={<Wishlist />} />
-      <Route path="/mockman" element={<Mockman />} />
-    </Routes>
-  );
+	return (
+		<Routes>
+			<Route path="*" element={<Error />} />
+			<Route path="/" element={<Home />} />
+			<Route path="/login" element={<Login />} />
+			<Route path="/signup" element={<SignUp />} />
+			<Route path="/products" element={<ProductListing />} />
+			<Route path="/mockman" element={<Mockman />} />
+
+			{/* Private paths */}
+			<Route element={<RequireAuth />}>
+				<Route path="/wishlist" element={<Wishlist />} />
+				<Route path="/cart" element={<Cart />} />
+			</Route>
+		</Routes>
+	);
 };

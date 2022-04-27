@@ -10,7 +10,7 @@
 :root {
   --color-pri: #2F3841;
   --text-sec: #2F3841;
-  --text-pri: hsl(233, 7%, 38%);
+  --text-pri: #5a5c68;
   --primary-bg: hsl(0, 0%, 95%);
   --color-text-bg: hsl(206, 51%, 92%);
   --color-image-bg: hsl(197, 37%, 96%);
@@ -46,7 +46,7 @@
   height: 80%;
 }
 
-.nav__button-sec button {
+.nav__button-sec .btn__primary {
   background-color: var(--text-sec);
 }
 
@@ -56,11 +56,6 @@
 }
 
 /*! Fix section */
-
-/*? Reseting gap here, Will fix it later */
-/* .grid {
-  gap: 0;
-} */
 
 .card i {
   /*?Getting override by fontawesome stylesheet (Fix it)*/

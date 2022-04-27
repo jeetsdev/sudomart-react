@@ -1,31 +1,18 @@
 import { Link } from "react-router-dom";
 import { useCart, useWishlist } from "../../contexts";
-import { ACTION_TYPE } from "../../utils";
 
 
 export const WishlistCard = ({ product }) => {
 
     const { img, altImage, title, price, rating, discountPrecentage, _id } = product;
-    const { cartState: { cartItem
-    }, cartDispatch } = useCart();
-    const { wishlistState, wishlistDispatch } = useWishlist();
+    const { cartState: { cartItem }, addToCart } = useCart();
+    const { wishlistState, removeFromWishlist, addToWishlist
+    } = useWishlist();
 
-    const { ADD_TO_CART, ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } = ACTION_TYPE;
-
-    // Add to wishlist handler
-    const addToWishlistHandler = (product) => {
-        wishlistDispatch({
-            type: ADD_TO_WISHLIST,
-            payload: product
-        })
-    }
-
-    // Remove From Wishlist Handler
-    const removeFromWishlistHandler = (product) => {
-        wishlistDispatch({
-            type: REMOVE_FROM_WISHLIST,
-            payload: product._id
-        })
+    // Move to cart and remove from Wishlist
+    const moveToCartHandler = (product) => {
+        addToCart(product);
+        removeFromWishlist(product);
     }
 
     return <div className="product">
@@ -38,8 +25,8 @@ export const WishlistCard = ({ product }) => {
                 {/* Wishlist icon here*/}
                 <div className="card__upper-icon center__flex">
                     {wishlistState.wishlistItem.find(item => item._id === _id) ?
-                        <i className="fas fa-heart border__rad-full center__flex margin-8px" onClick={() => removeFromWishlistHandler(product)}></i> :
-                        <i className="far fa-heart border__rad-full center__flex margin-8px" onClick={() => addToWishlistHandler(product)}></i>}
+                        <i className="fas fa-heart border__rad-full center__flex margin-8px" onClick={() => removeFromWishlist(product)}></i> :
+                        <i className="far fa-heart border__rad-full center__flex margin-8px" onClick={() => addToWishlist(product)}></i>}
                 </div>
                 {/* Card image here */}
                 <div className="card__upper-image center__flex">
@@ -53,7 +40,7 @@ export const WishlistCard = ({ product }) => {
                 {/*Card overlay section here  */}
                 <div className="card__upper-overlay">
                     <div className="upper__overlay-btn">
-                        {cartItem.find(item => item._id === _id) ? <Link to="/cart"><button className="btns btn__primary">Go to Cart</button></Link> : <button className="btns btn__primary" onClick={() => cartDispatch({ type: ADD_TO_CART, payload: product })}>Add to Cart</button>}
+                        {cartItem.find(item => item._id === _id) ? <Link to="/cart"><button className="btns btn__primary">Go to Cart</button></Link> : <button className="btns btn__primary" onClick={() => moveToCartHandler(product)}>Move to Cart</button>}
                     </div>
                 </div>
             </div>
@@ -62,6 +49,8 @@ export const WishlistCard = ({ product }) => {
             <div className="card__sec-lower center__flex flex__dir-col">
                 <div className="center__flex lower__sec-details  flex__dir-col">
                     <p className="details__sec-title txt-center">{title}</p>
+
+                    {/* Here mapping over a empty array to get index */}
                     <p className="details__sec-rating">{[...Array(5)].map((item, index) => {
                         return rating > index ? <span key={index} className="far fas fa-star txt-sml txt-grey"></span> : <span key={index} className="far fa-star txt-sml txt-grey"></span>
                     })}</p>

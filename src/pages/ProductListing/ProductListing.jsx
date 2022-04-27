@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Filter, Footer, Header, ProductCard } from "../../components"
 import { useFilter, useProduct } from "../../contexts";
 import { filterProduct } from "../../utils/filterProduct";
@@ -8,6 +9,11 @@ export const ProductListing = () => {
     const { filterState } = useFilter();
     const finalProductData = filterProduct(filterState, productData);
     
+    useEffect(() => {
+        // Scrolling to the top of the page
+        window.scrollTo({ top: 0 });
+    }, [])
+
     return (
         <>
             <div className="container__main center__flex flex__dir-col">
