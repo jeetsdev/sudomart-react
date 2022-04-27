@@ -16,7 +16,7 @@ export const Login = () => {
     const { SET_ERROR } = ACTION_TYPE
     const navigate = useNavigate();
     const location = useLocation();
-
+    const fromLocation = location?.state?.from?.pathname || "/";
     // Formdata state here
     const [loginFormData, setloginFormData] = useState({
         email: "",
@@ -48,7 +48,7 @@ export const Login = () => {
     // Checking if alredy login
     useEffect(() => {
         // 
-        if (authToken) { navigate(`${location?.state?.from?.pathname}`) }
+        if (authToken) { navigate(fromLocation) }
         // Setting intial error to empty
         authDispatch({
             type: SET_ERROR,
@@ -57,7 +57,7 @@ export const Login = () => {
                 emailError: "",
             },
         });
-    }, [authToken, navigate, SET_ERROR, authDispatch])
+    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation])
 
     return (
         <div>
