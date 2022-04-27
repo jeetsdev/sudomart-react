@@ -2,7 +2,7 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUserCircle } from "react-icons/fa";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/auth-context";
 import { ACTION_TYPE } from "../../utils";
@@ -20,6 +20,8 @@ export const SignUp = () => {
     const { authState: { authToken, error }, signUpFormHandler, authDispatch } = useAuth();
     const { SET_ERROR } = ACTION_TYPE;
     const navigate = useNavigate();
+    const location = useLocation();
+    const fromLocation = location?.state?.from?.pathname || "/";
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
@@ -32,7 +34,7 @@ export const SignUp = () => {
     }
 
     useEffect(() => {
-        if (authToken) { navigate('/products') }
+        if (authToken) { navigate(fromLocation) }
         // Setting intial error to empty
         authDispatch({
             type: SET_ERROR,
@@ -41,7 +43,7 @@ export const SignUp = () => {
                 emailError: "",
             },
         });
-    }, [authToken, navigate, SET_ERROR, authDispatch])
+    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation])
 
     return (
         <div>
