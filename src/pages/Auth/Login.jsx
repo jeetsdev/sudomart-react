@@ -6,7 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../contexts";
 import { useEffect } from "react";
-import { ACTION_TYPE } from "../../utils";
+import { ACTION_TYPE, titleHandler } from "../../utils";
 import { Header } from "../../components";
 
 export const Login = () => {
@@ -57,7 +57,9 @@ export const Login = () => {
                 emailError: "",
             },
         });
-    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation])
+        // changing title
+        titleHandler(location?.pathname.split("/")[1]);
+    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation, location?.pathname])
 
     return (
         <div>

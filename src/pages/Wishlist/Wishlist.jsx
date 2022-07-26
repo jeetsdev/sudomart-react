@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { WishlistCard, Header, Footer } from "../../components";
 import { useWishlist } from "../../contexts"
+import { titleHandler } from "../../utils";
 export const Wishlist = () => {
     const { wishlistState: { wishlistItem } } = useWishlist();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        // changing title 
+        titleHandler(pathname.split("/")[1]);
+    }, [pathname])
+
     return (
         <div className="container__main center__flex flex__dir-col">
             <Header />
