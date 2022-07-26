@@ -1,0 +1,27 @@
+.user__wrapper {
+	min-height: 90vh;
+
+}
+
+.user__profile-sec{
+    min-width: 50vw;
+    min-height: 200px;
+    background-color: var(--color-text-bg);
+    display: flex;
+    flex-direction: column;
+    /* align-items: space-between; */
+}
+
+.user__profile-sec p:nth-child(1){
+    text-decoration: underline;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.user__profile-sec p span:nth-child(1){
+    font-weight: bold;
+}
+
+.user__profile-sec button{
+    width: fit-content;
+    margin-top: auto;
+}

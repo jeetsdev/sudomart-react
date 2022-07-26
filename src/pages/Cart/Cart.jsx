@@ -1,10 +1,19 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Header, Footer, CartCard, OrderSummaryCard } from "../../components";
 import { useCart } from "../../contexts";
+import { titleHandler } from "../../utils";
 import "./Cart.css"
 
 export const Cart = () => {
     const { cartState: { cartItem } } = useCart();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        // changing title 
+        titleHandler(pathname.split("/")[1]);
+    }, [pathname])
+
     return (
         <>
             <div className="container__main center__flex flex__dir-col">

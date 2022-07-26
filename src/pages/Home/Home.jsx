@@ -1,5 +1,5 @@
 import { Header, NewArrivalCard, Footer, CategoryCard } from "../../components/index"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import {
     TeesOne,
     TeesFour,
@@ -10,16 +10,23 @@ import {
 } from "../../assets/index"
 import "./Home.css"
 import { useFilter } from "../../contexts"
-import { ACTION_TYPE } from "../../utils"
+import { ACTION_TYPE, titleHandler } from "../../utils"
+import { useEffect } from "react"
 
 export const Home = () => {
     const { filterDispatch } = useFilter();
     const { CATEGORIES, CLEAR_ALL, SUBCATEGORIES } = ACTION_TYPE;
+    const { pathname } = useLocation();
 
-    const catClickHandler = (type,cat) => {
+    const catClickHandler = (type, cat) => {
         filterDispatch({ type: CLEAR_ALL });
         filterDispatch({ type: type, payload: `${cat}` });
     }
+
+    useEffect(() => {
+        // changing title 
+        titleHandler(pathname.split("/")[1]);
+    }, [pathname])
 
     return <div className="">
         <div className="container__main container__main-home center__flex flex__dir-col">
@@ -55,7 +62,7 @@ export const Home = () => {
                 <section className="site__category-sec center__flex flex__dir-col">
                     <h2 className="headline-2 margin-2rem">Shop By Categories</h2>
                     <div className="grid">
-                        <Link to="/products" onClick={() => { catClickHandler(CATEGORIES,"TEES")}}> <CategoryCard categoryName={"Tees"} cardImage={TeesFour} />
+                        <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "TEES") }}> <CategoryCard categoryName={"Tees"} cardImage={TeesFour} />
                         </Link>
                         <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "HOODIES") }}> <CategoryCard categoryName={"Hoodies"} cardImage={HoodieOne} />
                         </Link>

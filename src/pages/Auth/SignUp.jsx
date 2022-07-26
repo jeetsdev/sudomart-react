@@ -5,7 +5,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/auth-context";
-import { ACTION_TYPE } from "../../utils";
+import { ACTION_TYPE, titleHandler } from "../../utils";
 import { Header } from "../../components";
 
 export const SignUp = () => {
@@ -43,7 +43,9 @@ export const SignUp = () => {
                 emailError: "",
             },
         });
-    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation])
+        // changing title
+        titleHandler(location?.pathname.split("/")[1]);
+    }, [authToken, navigate, SET_ERROR, authDispatch, fromLocation, location?.pathname])
 
     return (
         <div>

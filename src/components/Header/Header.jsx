@@ -6,7 +6,8 @@ import { BsFillHeartFill, BsFillBagCheckFill } from "react-icons/bs"
 export const Header = () => {
     const { cartState } = useCart();
     const { wishlistState } = useWishlist();
-    const { authState: { authToken }, signOutHandler } = useAuth();
+    const { authState: { authToken } } = useAuth();
+    console.log('authToken: ', authToken);
 
     return <header className="main__header">
 
@@ -34,13 +35,12 @@ export const Header = () => {
 
                 {/* Button section here*/}
                 <div className="nav__button-sec center__flex">
-                    {authToken && <button className="btns btn__secondary" onClick={() => signOutHandler()}>Logout</button>}
                     <Link to="/products">
                         <button className="btns btn__secondary margin__lr-8px border__rad-4px">Shop</button>
                     </Link>
                     {
                         authToken ?
-                            <Link to={"/profile"} className="nav__sec-user">
+                            <Link to={"/user"} className="nav__sec-user">
                                 <FaUserCircle className="nav__icons" />
                             </Link>
                             :
@@ -50,19 +50,16 @@ export const Header = () => {
                     }
                     <Link to={`/wishlist`} className="bagde__sec bagde__sec-wishlist center__flex">
                         <BsFillHeartFill className="nav__icons" />
-                        <span className="bagde__sec-text border__rad-full center__flex">
+                        {authToken && <span className="bagde__sec-text border__rad-full center__flex">
                             {wishlistState?.wishlistItem.length}
-                        </span>
+                        </span>}
                     </Link>
                     <Link to={`/cart`} className="bagde__sec bagde__sec-cart center__flex">
                         <BsFillBagCheckFill className="nav__icons" />
-                        <span className="bagde__sec-text border__rad-full center__flex">
+                        {authToken && <span className="bagde__sec-text border__rad-full center__flex">
                             {cartState?.cartItem.length}
-                        </span>
+                        </span>}
                     </Link>
-
-                    {/* <HeaderIcon iconName={"fa-heart"} route="/wishlist" quantity={wishlistState.wishlistItem.length} />
-                    <HeaderIcon iconName={"fa-shopping-bag"} route="/cart" quantity={cartState.cartItem.length} /> */}
                 </div>
             </nav>
         </nav>

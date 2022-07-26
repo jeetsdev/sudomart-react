@@ -1,18 +1,22 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Filter, Footer, Header, ProductCard } from "../../components"
 import { useFilter, useProduct } from "../../contexts";
-import { filterProduct } from "../../utils/filterProduct";
+import { filterProduct, titleHandler } from "../../utils";
 import "./ProductListing.css"
 
 export const ProductListing = () => {
     const { productData } = useProduct();
     const { filterState } = useFilter();
     const finalProductData = filterProduct(filterState, productData);
-    
+    const { pathname } = useLocation();
+
     useEffect(() => {
         // Scrolling to the top of the page
         window.scrollTo({ top: 0 });
-    }, [])
+        // changing title
+        titleHandler(pathname.split("/")[1]);
+    }, [pathname])
 
     return (
         <>

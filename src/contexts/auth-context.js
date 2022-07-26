@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(authReducer, {
 		authToken: token,
 		userName: userData?.userName,
+		email: userData?.email,
 		error: {
 			emailError: "",
 			passwordError: "",
@@ -80,6 +81,7 @@ export const AuthProvider = ({ children }) => {
 						payload: {
 							authToken: encodedToken,
 							userName: foundUser?.userName,
+							email:foundUser?.email,
 						},
 					});
 					navigate(`/products`, {
@@ -139,6 +141,7 @@ export const AuthProvider = ({ children }) => {
 						payload: {
 							authToken: encodedToken,
 							userName: createdUser?.userName,
+							email: createdUser?.email,
 						},
 					});
 					navigate(`/products`, {
