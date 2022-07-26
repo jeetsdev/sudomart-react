@@ -7,6 +7,7 @@ export const Header = () => {
     const { cartState } = useCart();
     const { wishlistState } = useWishlist();
     const { authState: { authToken } } = useAuth();
+    console.log('authToken: ', authToken);
 
     return <header className="main__header">
 
@@ -49,15 +50,15 @@ export const Header = () => {
                     }
                     <Link to={`/wishlist`} className="bagde__sec bagde__sec-wishlist center__flex">
                         <BsFillHeartFill className="nav__icons" />
-                        <span className="bagde__sec-text border__rad-full center__flex">
+                        {authToken && <span className="bagde__sec-text border__rad-full center__flex">
                             {wishlistState?.wishlistItem.length}
-                        </span>
+                        </span>}
                     </Link>
                     <Link to={`/cart`} className="bagde__sec bagde__sec-cart center__flex">
                         <BsFillBagCheckFill className="nav__icons" />
-                        <span className="bagde__sec-text border__rad-full center__flex">
+                        {authToken && <span className="bagde__sec-text border__rad-full center__flex">
                             {cartState?.cartItem.length}
-                        </span>
+                        </span>}
                     </Link>
                 </div>
             </nav>
