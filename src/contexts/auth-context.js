@@ -81,6 +81,7 @@ export const AuthProvider = ({ children }) => {
 						payload: {
 							authToken: encodedToken,
 							userName: foundUser?.userName,
+							email:foundUser?.email,
 						},
 					});
 					navigate(`/products`, {
@@ -140,6 +141,7 @@ export const AuthProvider = ({ children }) => {
 						payload: {
 							authToken: encodedToken,
 							userName: createdUser?.userName,
+							email: createdUser?.email,
 						},
 					});
 					navigate(`/products`, {
