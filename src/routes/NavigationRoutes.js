@@ -9,6 +9,7 @@ import {
 	Wishlist,
 	Login,
 	SignUp,
+	User,
 } from "../pages";
 
 export const NavigationRoutes = () => {
@@ -25,6 +26,7 @@ export const NavigationRoutes = () => {
 			<Route element={<RequireAuth />}>
 				<Route path="/wishlist" element={<Wishlist />} />
 				<Route path="/cart" element={<Cart />} />
+				<Route path="/user" element={<User />} />
 			</Route>
 		</Routes>
 	);

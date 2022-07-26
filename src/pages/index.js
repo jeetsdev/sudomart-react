@@ -5,4 +5,4 @@ export { Wishlist } from "./Wishlist/Wishlist";
 export { Error } from "./Error/Error";
 export { Login } from "./Auth/Login";
 export { SignUp } from "./Auth/SignUp";
-
+export { User } from "./User/User";

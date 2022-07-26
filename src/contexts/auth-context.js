@@ -16,6 +16,7 @@ export const AuthProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(authReducer, {
 		authToken: token,
 		userName: userData?.userName,
+		email: userData?.email,
 		error: {
 			emailError: "",
 			passwordError: "",
