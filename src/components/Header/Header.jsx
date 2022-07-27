@@ -7,7 +7,6 @@ export const Header = () => {
     const { cartState } = useCart();
     const { wishlistState } = useWishlist();
     const { authState: { authToken } } = useAuth();
-    console.log('authToken: ', authToken);
 
     return <header className="main__header">
 

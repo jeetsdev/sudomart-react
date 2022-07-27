@@ -12,7 +12,6 @@ export const WishlistCard = ({ product }) => {
     // Move to cart and remove from Wishlist
     const moveToCartHandler = (product) => {
         addToCart(product);
-        removeFromWishlist(product);
     }
 
     return <div className="product">

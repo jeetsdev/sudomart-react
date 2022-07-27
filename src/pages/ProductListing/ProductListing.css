@@ -7,6 +7,7 @@
 	display: grid;
 	grid-template-columns: 1fr 5fr;
 	justify-content: center;
+	min-height: 90vh;
 }
 
 /** Filter section style here */
@@ -25,6 +26,15 @@
 /** Prodcuts section cards style here */
 .site__product-sec {
 	padding: 0 1rem;
+}
+
+.product__no-item {
+	font-size: 2rem;
+	margin-top: 2rem;
+}
+
+.product__no-item span {
+	font-weight: 100;
 }
 
 /** Gaps btw cards */

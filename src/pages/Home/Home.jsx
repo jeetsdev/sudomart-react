@@ -36,9 +36,9 @@ export const Home = () => {
             <main className="landing__site-wrapper">
                 {/* Site intro here */}
                 <section className="site__intro-sec grid grid__col-50-50">
-                    <div className="intro__sec-box" />
-                    <div className="intro__sec-box" />
                     <div className="intro__sec-text center__flex flex__dir-col">
+                        <div className="text__sec-box" />
+                        <div className="text__sec-box" />
                         <h1 className="headline-1 margin__tb-8px">Code In Style</h1>
                         <p className="text-mid margin__tb-8px">
                             Designed with <i className="fas fa-heart" /> for developers, coders
@@ -49,6 +49,8 @@ export const Home = () => {
                         </Link>
                     </div>
                     <div className="intro__sec-image center__flex">
+                        <div className="image__sec-box" />
+                        <div className="image__sec-box" />
                         <div className="image__container">
                             <img
                                 src={TeesOne}

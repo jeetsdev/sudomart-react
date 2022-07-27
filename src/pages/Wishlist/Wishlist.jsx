@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { WishlistCard, Header, Footer } from "../../components";
 import { useWishlist } from "../../contexts"
 import { titleHandler } from "../../utils";
+import "./Wishlist.css"
+
 export const Wishlist = () => {
     const { wishlistState: { wishlistItem } } = useWishlist();
     const { pathname } = useLocation();
