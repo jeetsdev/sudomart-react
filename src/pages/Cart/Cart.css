@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.cart__site-wrapper{
+    min-height: 90vh;
+}
+
 .cart__product-item {
     padding:0 1rem;
     min-height: 20rem;

@@ -14,7 +14,7 @@ body {
 	font-size: 2rem;
 	margin: 1rem;
 	opacity: 0.7;
-    transition: opacity .3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 .nav__icons:hover {
@@ -23,15 +23,15 @@ body {
 
 .bagde__sec .bagde__sec-text {
 	left: 2em;
-    top: .5rem;
+	top: 0.5rem;
 }
 
-.nav__sec-user{
-    transform: translateY(3px);
+.nav__sec-user {
+	transform: translateY(3px);
 }
 
-.bagde__sec-cart{
-    transform: translateY(-3px);
+.bagde__sec-cart {
+	transform: translateY(-3px);
 }
 
 /*! Main site wrappers style   */
@@ -41,25 +41,27 @@ body {
 	align-items: center;
 	gap: 0;
 	min-height: 80vh;
-	position: relative;
 	background-color: var(--intro-sec-bg);
 }
 
 /* White box near top left corner style */
-.site__intro-sec .intro__sec-box {
+.intro__sec-text {
+	position: relative;
+}
+
+.site__intro-sec .text__sec-box {
 	position: absolute;
-	width: 3rem;
+	max-width: 3rem;
 	height: 3rem;
-	background-color: var(--color-pure-white);
 	background-color: var(--color-image-bg);
 }
 
-.site__intro-sec .intro__sec-box:nth-child(1) {
+.site__intro-sec .text__sec-box:nth-child(1) {
 	top: 0;
 	left: 0;
 }
 
-.site__intro-sec .intro__sec-box:nth-child(2) {
+.site__intro-sec .text__sec-box:nth-child(2) {
 	top: 3rem;
 	left: 3rem;
 }
@@ -105,6 +107,26 @@ body {
 /* Intro section image style here */
 .site__intro-sec .intro__sec-image {
 	background-color: var(--color-image-bg);
+	position: relative;
+}
+
+.intro__sec-image .image__sec-box {
+	position: absolute;
+	background-color: var(--color-text-bg);
+	width: 3rem;
+	height: 3rem;
+}
+
+/* first box */
+.intro__sec-image .image__sec-box:nth-child(1) {
+	bottom: 0;
+	right: 0;
+}
+
+/* second box */
+.intro__sec-image .image__sec-box:nth-child(2) {
+	bottom: 3rem;
+	right: 3rem;
 }
 
 .intro__sec-image .image__container {
