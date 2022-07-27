@@ -1,8 +1,10 @@
 import { useCart } from "../../contexts"
+import { usePayment } from "../../hooks/usePayment";
 
 export const OrderSummaryCard = () => {
     const { cartState: { cartItem
     } } = useCart();
+    const { displayRazorpay } = usePayment();
 
     // Totle price calculation here
     const totalPrice = cartItem.length === 0 ? 0 : cartItem.reduce((acc, crr) => {
@@ -52,7 +54,9 @@ export const OrderSummaryCard = () => {
         {/* Order place */}
         <div className="order__details-place padding-8px">
             <p className="text__green">You will save {cartItem.length === 0 ? 0 : discountPrice} on this order.</p>
-            <button className="btns btn__primary margin__tb-8px border__rad-4px">Place order</button>
+            <button className="btns btn__primary margin__tb-8px border__rad-4px" onClick={() => displayRazorpay({
+                amount: totalPrice - discountPrice,
+            })}>Place order</button>
         </div>
     </div>
 

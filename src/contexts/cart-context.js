@@ -23,6 +23,7 @@ export const CartProvider = ({ children }) => {
 		REMOVE_FROM_CART,
 		INCREASE_ITEM_QTY,
 		DECREASE_ITEM_QTY,
+		CLEAR_CART,
 	} = ACTION_TYPE;
 
 	// Getting initial cart items.
@@ -177,6 +178,27 @@ export const CartProvider = ({ children }) => {
 		}
 	};
 
+	// Clearing cart here (custom api)
+	const clearCart = async () => {
+		try {
+			const res = await axios.post(
+				`/api/user/cart/clearCart`,
+				{},
+				{
+					headers: {
+						authorization: authToken,
+					},
+				},
+			);
+			const {
+				data: { cart },
+			} = res;
+			dispatch({ type: CLEAR_CART, payload: cart });
+		} catch (error) {
+			toast.error("Error occuerd in clearing cart.");
+		}
+	};
+
 	return (
 		<CartContext.Provider
 			value={{
@@ -186,6 +208,7 @@ export const CartProvider = ({ children }) => {
 				removeFromCart,
 				increaseQuantity,
 				decreaseQuantity,
+				clearCart,
 			}}>
 			{children}
 		</CartContext.Provider>

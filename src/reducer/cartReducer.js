@@ -6,6 +6,7 @@ const {
 	INCREASE_ITEM_QTY,
 	DECREASE_ITEM_QTY,
 	REMOVE_FROM_CART,
+	CLEAR_CART,
 } = ACTION_TYPE;
 
 export const cartReducer = (state, action) => {
@@ -31,6 +32,11 @@ export const cartReducer = (state, action) => {
 				cartItem: action.payload,
 			};
 		case DECREASE_ITEM_QTY:
+			return {
+				...state,
+				cartItem: action.payload,
+			};
+		case CLEAR_CART:
 			return {
 				...state,
 				cartItem: action.payload,
