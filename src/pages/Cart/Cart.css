@@ -84,7 +84,7 @@
 
 .card__action-btns i{
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .text__green{
@@ -138,3 +138,25 @@
 .order__details-place button {
     width: 100%;
 }
+
+/*! Media queries here  */
+@media screen and (max-width: 680px) {
+	.cart__site-wrapper {
+		grid-template-columns: 1fr;
+	}
+    .cart__card{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* @media screen and (max-width: 800px) {
+	.cart__site-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wishlist__sec-cards {
+		grid-template-columns: repeat(1, 1fr);
+	}
+} */

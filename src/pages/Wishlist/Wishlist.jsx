@@ -26,8 +26,7 @@ export const Wishlist = () => {
                 <section className="site__wishlist-sec">
                     {wishlistItem.length === 0 ? <div className="center__flex flex__dir-col cart__card-empty">
                         {/*  No items here */}
-                        <div className="center__flex headline-3">Nothing here <i className="fas fa-heart-broken margin__lr-8px"></i> ! Let's add something.
-
+                        <div className="center__flex headline-3 wishlist__no-item">Nothing here <i className="fas fa-heart-broken margin-8px"></i> ! Let's add something.
                         </div>
                         <Link to="/products" className="btns btn__primary border__rad-4px margin-1rem center__flex">
                             Return to Shop

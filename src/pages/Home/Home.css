@@ -12,7 +12,7 @@ body {
 
 .nav__icons {
 	font-size: 2rem;
-	margin: 1rem;
+	margin: 1rem .75rem;
 	opacity: 0.7;
 	transition: opacity 0.3s ease-in-out;
 }
@@ -40,14 +40,11 @@ body {
 .landing__site-wrapper .site__intro-sec {
 	align-items: center;
 	gap: 0;
-	min-height: 80vh;
+	min-height: 85vh;
 	background-color: var(--intro-sec-bg);
 }
 
 /* White box near top left corner style */
-.intro__sec-text {
-	position: relative;
-}
 
 .site__intro-sec .text__sec-box {
 	position: absolute;
@@ -68,6 +65,7 @@ body {
 
 /* Intro section text style here */
 .site__intro-sec .intro__sec-text {
+	position: relative;
 	text-align: center;
 	min-height: 100%;
 	width: 100%;
@@ -79,8 +77,8 @@ body {
 }
 
 .intro__sec-text .headline-1 {
-	font-size: 4rem;
-	font-weight: 900;
+	font-size: 3.5rem;
+	font-weight: 600;
 }
 
 .intro__sec-text p {
@@ -94,7 +92,7 @@ body {
 }
 
 .intro__sec-text a {
-	max-width: 10rem;
+	max-width: 12rem;
 	padding: 1rem;
 	margin-top: 2rem;
 	background-color: var(--text-sec);
@@ -104,10 +102,12 @@ body {
 	transform: rotate(-90deg);
 }
 
-/* Intro section image style here */
+/** Intro section image style here */
 .site__intro-sec .intro__sec-image {
 	background-color: var(--color-image-bg);
 	position: relative;
+	height: 100%;
+	width: 100%;
 }
 
 .intro__sec-image .image__sec-box {
@@ -129,14 +129,6 @@ body {
 	right: 3rem;
 }
 
-.intro__sec-image .image__container {
-	min-width: 30rem;
-}
-
-.image-res {
-	max-height: 100%;
-}
-
 /*! Category section style here  */
 
 .site__category-sec,
@@ -144,7 +136,7 @@ body {
 	margin: 2rem 0;
 }
 
-.site__category-sec .grid {
+.category__sec-cards {
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 1rem;
 	max-width: 90%;
@@ -168,4 +160,32 @@ body {
 
 .newarrival__sec-cards .card__sec-lower {
 	background-color: var(--color-text-bg);
+}
+
+/*! Media queries here  */
+@media screen and (max-width: 950px) {
+	.site__intro-sec{
+		grid-template-columns: 1fr;
+	}
+	.intro__sec-image{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.newarrival__sec-cards{
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.category__sec-cards{
+		grid-template-columns: 1fr;
+	}	
+}
+
+@media screen and (max-width: 350px) {
+	.card__newarrival{
+		grid-template-columns: 1fr;
+	}	
 }

@@ -1,105 +1,125 @@
 /*! Import area  */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://sudo-ui.netlify.app/components/components.css");
 @import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 /*! Common styles here */
 
 /* Color variables here */
 :root {
-  --color-pri: #2F3841;
-  --text-sec: #2F3841;
-  --text-pri: #5a5c68;
-  --primary-bg: hsl(0, 0%, 95%);
-  --color-text-bg: hsl(206, 51%, 92%);
-  --color-image-bg: hsl(197, 37%, 96%);
+	--color-pri: #2f3841;
+	--text-sec: #2f3841;
+	--text-pri: #5a5c68;
+	--primary-bg: hsl(0, 0%, 95%);
+	--color-text-bg: hsl(206, 51%, 92%);
+	--color-image-bg: hsl(197, 37%, 96%);
 }
 
 .container__main {
-  min-height: 100vh;
-  justify-content: initial;
-  align-items: initial;
+	min-height: 100vh;
+	justify-content: initial;
+	align-items: initial;
 }
 
 /*!  Header style here */
 
 .container__main .main__header {
-  min-height: 15vh;
-  border-bottom: 2px solid var(--color-text-bg);
+	min-height: 10vh;
+	border-bottom: 2px solid var(--color-text-bg);
 }
 
 /* Header announcment-bar style here */
 .main__header .header__announcment-bar {
-  width: 100%;
-  height: 20%;
-  min-height: 1rem;
-  background-color: var(--color-text-bg);
-  font-weight: 500;
+	width: 100%;
+	height: 20%;
+	min-height: 1rem;
+	background-color: var(--color-text-bg);
+	font-weight: 500;
 }
-
 
 /* Header navbar style here */
 .header__navbar .nav {
-  background-color: var(--primary-bg);
-  height: auto;
-  height: 80%;
+	background-color: var(--primary-bg);
+	height: 100%;
 }
 
 .nav__button-sec .btn__primary {
-  background-color: var(--text-sec);
+	background-color: var(--text-sec);
 }
 
 .nav .nav__button-sec span {
-  color: var(--color-image-bg);
-  background-color: var(--color-pure-red);
+	color: var(--color-image-bg);
+	background-color: var(--color-pure-red);
 }
 
-/*! Fix section */
+.bagde__sec-cart{
+	margin-right: 1rem;
+}
+
+/*! Common section */
 
 .card i {
-  /*?Getting override by fontawesome stylesheet (Fix it)*/
-  display: flex !important;
+	/*?Getting override by fontawesome stylesheet */
+	display: flex !important;
 }
 
 .btns {
-  padding: .5rem;
+	padding: 0.5rem;
+}
+
+.font-primary {
+	font-family: "Satisfy", sans-serif;
 }
 
 /*! Card style here  */
 
 .card {
-  cursor: pointer;
-  transition: all .3s ease-in-out;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
-  box-shadow: 0 5px 10px var(--color-off-white);
-  transform: translateY(-5px);
+	box-shadow: 0 5px 10px var(--color-off-white);
+	transform: translateY(-5px);
 }
 
 /* Card upper section here */
 .card .card__sec-upper {
-  background-color: var(--color-image-bg);
+	background-color: var(--color-image-bg);
 }
 
 /* Card lower section here */
 .card .card__sec-lower {
-  background-color: var(--color-text-bg);
-  padding: 0.5rem;
+	background-color: var(--color-text-bg);
+	padding: 0.5rem;
 }
 
 /*! Main footer style here */
 
 .main__footer {
-  margin-top: auto;
-  min-height: 2rem;
+	margin-top: auto;
+	min-height: 2rem;
 }
 
 .main__footer h2 {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .main__footer p {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
+}
+
+/*! Media queries here  */
+@media screen and (max-width: 1024px) {
+	body {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	body {
+		font-size: 10px;
+	}
 }

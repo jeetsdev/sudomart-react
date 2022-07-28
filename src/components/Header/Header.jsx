@@ -21,7 +21,7 @@ export const Header = () => {
 
                 {/* Title section here */}
                 <div className="nav__title-sec">
-                    <Link to={"/"}><h3 className="headline-3"> SudoMart </h3></Link>
+                    <Link to={"/"}><h3 className="headline-3 font-primary"> SudoMart </h3></Link>
                 </div>
 
                 {/* Search section here*/}
@@ -44,7 +44,7 @@ export const Header = () => {
                             </Link>
                             :
                             <Link to={"/login"}>
-                                <button className="btns btn__primary border__rad-4px margin__lr-8px">Login</button>
+                                <button className="btns btn__primary border__rad-4px margin__lr-4px">Login</button>
                             </Link>
                     }
                     <Link to={`/wishlist`} className="bagde__sec bagde__sec-wishlist center__flex">

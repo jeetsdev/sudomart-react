@@ -1,3 +1,25 @@
-.wishlist__site-wrapper{
-    min-height: 90vh;
+.wishlist__site-wrapper {
+	min-height: 90vh;
+}
+
+/*! Media queries here  */
+@media screen and (max-width: 1100px) {
+	.wishlist__sec-cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.wishlist__sec-cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wishlist__sec-cards {
+		grid-template-columns: repeat(1, 1fr);
+	}
+    .wishlist__no-item{
+        flex-direction: column;
+    }
 }

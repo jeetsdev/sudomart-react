@@ -16,7 +16,7 @@ export const NewArrivalCard = ({ cardImage, cardHeading, cardDiscription }) => {
 
         {/* Card Lower section here */}
         <div className="card__sec-lower center__flex flex__dir-col">
-            <div className="lower__sec-top text-mid">New Arrivals</div>
+            <div className="lower__sec-top text-mid font-primary">New Arrivals</div>
             <div className="lower__sec-bottom">
                 <h3 className="headline-3 margin__tb-8px">{cardHeading}</h3>
                 <p className="margin__tb-8px">
