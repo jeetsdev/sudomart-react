@@ -54,6 +54,10 @@
 	background-color: var(--color-pure-red);
 }
 
+.bagde__sec-cart{
+	margin-right: 1rem;
+}
+
 /*! Common section */
 
 .card i {
