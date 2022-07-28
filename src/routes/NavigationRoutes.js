@@ -10,6 +10,7 @@ import {
 	Login,
 	SignUp,
 	User,
+	Order,
 } from "../pages";
 
 export const NavigationRoutes = () => {
@@ -27,6 +28,7 @@ export const NavigationRoutes = () => {
 				<Route path="/wishlist" element={<Wishlist />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/user" element={<User />} />
+				<Route path="/order/:orderID" element={<Order />} />
 			</Route>
 		</Routes>
 	);

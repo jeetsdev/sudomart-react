@@ -56,6 +56,7 @@ export const OrderSummaryCard = () => {
             <p className="text__green">You will save {cartItem.length === 0 ? 0 : discountPrice} on this order.</p>
             <button className="btns btn__primary margin__tb-8px border__rad-4px" onClick={() => displayRazorpay({
                 amount: totalPrice - discountPrice,
+                quantity: totalQty,
             })}>Place order</button>
         </div>
     </div>
