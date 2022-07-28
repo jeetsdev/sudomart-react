@@ -39,7 +39,7 @@ export const Home = () => {
                     <div className="intro__sec-text center__flex flex__dir-col">
                         <div className="text__sec-box" />
                         <div className="text__sec-box" />
-                        <h1 className="headline-1 margin__tb-8px">Code In Style</h1>
+                        <h1 className="headline-1 margin__tb-8px font-primary">Code In Style</h1>
                         <p className="text-mid margin__tb-8px">
                             Designed with <i className="fas fa-heart" /> for developers, coders
                             and programmers.
@@ -62,8 +62,8 @@ export const Home = () => {
                 </section>
                 {/* Site Category here */}
                 <section className="site__category-sec center__flex flex__dir-col">
-                    <h2 className="headline-2 margin-2rem">Shop By Categories</h2>
-                    <div className="grid">
+                    <h2 className="headline-2 margin-2rem font-primary">Shop By Categories</h2>
+                    <div className="grid category__sec-cards">
                         <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "TEES") }}> <CategoryCard categoryName={"Tees"} cardImage={TeesFour} />
                         </Link>
                         <Link to="/products" onClick={() => { catClickHandler(CATEGORIES, "HOODIES") }}> <CategoryCard categoryName={"Hoodies"} cardImage={HoodieOne} />
@@ -74,7 +74,7 @@ export const Home = () => {
                 </section>
                 {/* Site brands here */}
                 <section className="site__newarrival-sec center__flex flex__dir-col">
-                    <h2 className="newarrival__sec-title headline-2 margin-2rem">
+                    <h2 className="newarrival__sec-title headline-2 margin-2rem font-primary">
                         New Arrivals
                     </h2>
                     <div className="newarrival__sec-cards grid grid__col-50-50">
