@@ -23,6 +23,10 @@
 	align-items: initial;
 }
 
+.container__route{
+	min-height: 90vh;
+}
+
 /*!  Header style here */
 
 .container__main .main__header {

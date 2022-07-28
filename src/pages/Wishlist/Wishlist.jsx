@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { WishlistCard, Header, Footer } from "../../components";
+import { WishlistCard } from "../../components";
 import { useWishlist } from "../../contexts"
 import { titleHandler } from "../../utils";
 import "./Wishlist.css"
@@ -15,8 +15,7 @@ export const Wishlist = () => {
     }, [pathname])
 
     return (
-        <div className="container__main center__flex flex__dir-col">
-            <Header />
+        <>
             <h2 className="headline-2 main__title margin-1rem center__flex">
                 <i className="fas fa-heart margin__lr-8px"></i>
                 My Wishlist
@@ -39,8 +38,6 @@ export const Wishlist = () => {
                         </div>}
                 </section>
             </main>
-            <Footer />
-        </div>
-
+        </>
     )
 }
