@@ -13,7 +13,7 @@ export const Filter = () => {
 			<div className="filter__sec-title center__flex">
 				<h3>Filter</h3>
 				<button
-					className="btns btn__link"
+					className="btns btn__secondary margin-8px border__rad-4px "
 					onClick={() => filterDispatch({ type: CLEAR_ALL })}>
 					Clear
 				</button>
