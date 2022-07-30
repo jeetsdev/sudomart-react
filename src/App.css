@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://sudo-ui.netlify.app/components/components.css");
 @import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 /*! Common styles here */
 
@@ -23,7 +23,7 @@
 	align-items: initial;
 }
 
-.container__route{
+.container__route {
 	min-height: 90vh;
 }
 
@@ -31,7 +31,7 @@
 
 .container__main .main__header {
 	min-height: 10vh;
-	border-bottom: 2px solid var(--color-text-bg);
+	background-color: var(--color-image-bg);
 }
 
 /* Header announcment-bar style here */
@@ -45,7 +45,6 @@
 
 /* Header navbar style here */
 .header__navbar .nav {
-	background-color: var(--primary-bg);
 	height: 100%;
 }
 
@@ -58,11 +57,20 @@
 	background-color: var(--color-pure-red);
 }
 
-.bagde__sec-cart{
+.bagde__sec-cart {
 	margin-right: 1rem;
 }
 
 /*! Common section */
+
+.card {
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.upper__overlay-btn .btn__primary{
+	border-radius: 4px;
+}
 
 .card i {
 	/*?Getting override by fontawesome stylesheet */
@@ -103,8 +111,9 @@
 /*! Main footer style here */
 
 .main__footer {
-	margin-top: auto;
 	min-height: 2rem;
+	background-color: var(--color-image-bg);
+	border-top: 2px solid var(--color-text-bg);
 }
 
 .main__footer h2 {
