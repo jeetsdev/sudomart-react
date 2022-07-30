@@ -13,6 +13,7 @@
 /** Filter section style here */
 .site__filter-sec > * {
 	margin-left: 1rem;
+	height: 100%;
 }
 
 .site__filter-sec form {
@@ -61,6 +62,7 @@
 /** Gaps btw cards */
 .product__sec-cards {
 	gap: 1rem;
+	margin-bottom: 1rem;
 }
 
 .card__e-commerce {

@@ -52,15 +52,21 @@ export const ProductListing = () => {
 						</p>
 					</div>
 				) : (
-					<div className="product__sec-cards grid grid__col-4">
-						{finalProductData.map((product) => {
-							return (
-								<ProductCard
-									key={product.id}
-									product={product}
-								/>
-							);
-						})}
+					<div>
+						<p className="margin__tb-8px txt-grey">
+							(Showing {finalProductData.length} products of{" "}
+							{productData.length} products)
+						</p>
+						<div className="product__sec-cards grid grid__col-4">
+							{finalProductData.map((product) => {
+								return (
+									<ProductCard
+										key={product.id}
+										product={product}
+									/>
+								);
+							})}
+						</div>
 					</div>
 				)}
 			</section>
