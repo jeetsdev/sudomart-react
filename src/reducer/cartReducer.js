@@ -7,6 +7,7 @@ const {
 	DECREASE_ITEM_QTY,
 	REMOVE_FROM_CART,
 	CLEAR_CART,
+	SET_ORDER_DETAILS,
 } = ACTION_TYPE;
 
 export const cartReducer = (state, action) => {
@@ -40,6 +41,16 @@ export const cartReducer = (state, action) => {
 			return {
 				...state,
 				cartItem: action.payload,
+			};
+		case SET_ORDER_DETAILS:
+			return {
+				...state,
+				orderDetails: {
+					amount: action.payload?.amount,
+					quantity: action.payload?.quantity,
+					paymentID: action.payload?.paymentID,
+					address: action.payload?.address,
+				},
 			};
 		default:
 			break;

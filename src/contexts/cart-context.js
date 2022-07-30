@@ -12,6 +12,7 @@ export const CartProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(cartReducer, {
 		cartItem: [],
 		loader: false,
+		orderDetails: {},
 	});
 
 	const {
@@ -31,7 +32,7 @@ export const CartProvider = ({ children }) => {
 		if (authToken) {
 			try {
 				(async () => {
-					const res = await axios.get("api/user/cart", {
+					const res = await axios.get("/api/user/cart", {
 						headers: {
 							authorization: authToken,
 						},

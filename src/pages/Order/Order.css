@@ -1,0 +1,29 @@
+.order__wrapper {
+	min-height: 90vh;
+}
+
+.order__sec {
+	min-width: 50vw;
+	background-color: red;
+	background-color: var(--color-text-bg);
+}
+
+.order__sec h2 {
+	color: var(--color-green);
+}
+
+.order__sec-details p {
+	font-weight: 600;
+}
+.order__sec-details span {
+	font-weight: 100;
+}
+
+.order__sec-address p{
+	font-weight: initial;
+}
+
+.order__sec .btns {
+	width: fit-content;
+	margin: 0 auto;
+}
