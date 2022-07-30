@@ -6,4 +6,3 @@ export { filterBySubCategory } from "./filterBySubCategory";
 export { filterByRating } from "./filterByRating";
 export { ACTION_TYPE } from "./actionTypes";
 export { validateEmail, validatePassword } from "./validation";
-export { titleHandler } from "./titleHandler";

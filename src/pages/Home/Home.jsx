@@ -1,5 +1,5 @@
 import { NewArrivalCard, CategoryCard } from "../../components/index";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
 	TeesOne,
 	TeesFour,
@@ -10,23 +10,16 @@ import {
 } from "../../assets/index";
 import "./Home.css";
 import { useFilter } from "../../contexts";
-import { ACTION_TYPE, titleHandler } from "../../utils";
-import { useEffect } from "react";
+import { ACTION_TYPE } from "../../utils";
 
 export const Home = () => {
 	const { filterDispatch } = useFilter();
 	const { CATEGORIES, CLEAR_ALL, SUBCATEGORIES } = ACTION_TYPE;
-	const { pathname } = useLocation();
 
 	const catClickHandler = (type, cat) => {
 		filterDispatch({ type: CLEAR_ALL });
 		filterDispatch({ type: type, payload: `${cat}` });
 	};
-
-	useEffect(() => {
-		// changing title
-		titleHandler(pathname.split("/")[1]);
-	}, [pathname]);
 
 	return (
 		<main className="landing__site-wrapper">
