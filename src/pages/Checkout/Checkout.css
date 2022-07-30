@@ -1,0 +1,93 @@
+/* ! Checkout page style here */
+
+.checkout__address-sec {
+	gap: 1rem;
+	align-items: initial;
+	justify-content: initial;
+	flex-wrap: wrap;
+}
+
+.checkout__address-sec label {
+	color: var(--color-green);
+	cursor: pointer;
+}
+
+.checkout__address-sec button {
+	width: fit-content;
+	margin: auto;
+}
+
+/* ! New Address Card style here */
+
+.new-address-sec {
+	position: fixed;
+	background-color: var(--color-trans-grey);
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 99;
+}
+
+.address__form {
+	gap: 1rem;
+	max-width: 35vw;
+	min-width: 150px;
+	width: 100%;
+	background-color: var(--color-image-bg);
+	border-radius: 5px;
+	margin: 0.5rem;
+	align-items: flex-start;
+	padding: 1rem;
+}
+
+.address__form input {
+	padding: 0.25rem;
+	position: relative;
+	width: 100%;
+	justify-content: flex-start;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid var(--text-pri);
+}
+
+.address__btns {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+/* ! Address card style here */
+
+.address__card {
+	min-width: 30%;
+	background-color: var(--color-image-bg);
+}
+
+.address__card button {
+	margin: 1rem 0;
+}
+
+/* ! Chekcout card style  */
+
+.address__sec span {
+	margin-bottom: 40px;
+}
+
+/*! Media queries here  */
+@media screen and (max-width: 680px) {
+	.checkout__site-wrapper {
+		grid-template-columns: 1fr 1fr;
+	}
+	.address__form {
+		max-width: 80%;
+	}
+}
+@media screen and (max-width: 480px) {
+	.checkout__site-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.address__card {
+		min-width: 100%;
+	}
+}

@@ -144,15 +144,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* @media screen and (max-width: 800px) {
-	.cart__site-wrapper {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.wishlist__sec-cards {
-		grid-template-columns: repeat(1, 1fr);
-	}
-} */

@@ -27,7 +27,7 @@ export const usePayment = () => {
 	};
 
 	// Display razorpay
-	const displayRazorpay = async ({ amount, quantity }) => {
+	const displayRazorpay = async ({ amount, quantity, address }) => {
 		const res = await loadScript(
 			"https://checkout.razorpay.com/v1/checkout.js",
 		);
@@ -51,6 +51,7 @@ export const usePayment = () => {
 							amount: amount,
 							quantity: quantity,
 							paymentID: response?.razorpay_payment_id,
+							address: address,
 						},
 					});
 					navigate(`/order/${response?.razorpay_payment_id}`, {

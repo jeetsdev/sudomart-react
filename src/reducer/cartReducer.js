@@ -46,9 +46,10 @@ export const cartReducer = (state, action) => {
 			return {
 				...state,
 				orderDetails: {
-					amount: action.payload.amount,
-					quantity: action.payload.quantity,
-					paymentID: action.payload.paymentID,
+					amount: action.payload?.amount,
+					quantity: action.payload?.quantity,
+					paymentID: action.payload?.paymentID,
+					address: action.payload?.address,
 				},
 			};
 		default:

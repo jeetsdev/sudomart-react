@@ -1,10 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { useCart } from "../../contexts";
+import { usePayment } from "../../hooks/usePayment";
 
-export const OrderSummaryCard = () => {
+export const CheckoutCard = ({ selectedAddress }) => {
 	const {
 		cartState: { cartItem },
 	} = useCart();
+	const { displayRazorpay } = usePayment();
 
 	// Totle price calculation here
 	const totalPrice =
@@ -32,13 +34,24 @@ export const OrderSummaryCard = () => {
 						(crr.price * crr.discountPrecentage * crr.qty) / 100
 					);
 			  }, 0);
-	const navigate = useNavigate();
+
+	const placeOrderHandler = () => {
+		if (totalQty === 0) {
+			toast.error("No items.");
+		} else {
+			displayRazorpay({
+				amount: totalPrice - discountPrice,
+				quantity: totalQty,
+				address: selectedAddress,
+			});
+		}
+	};
 
 	return (
 		<div className="cart__details-order padding-1rem">
 			{/* Order details title */}
 			<div className="order__details-title padding-8px">
-				<h3 className="headline-3">Order Summary</h3>
+				<h3 className="headline-3">Order Details</h3>
 			</div>
 
 			{/* Order items */}
@@ -63,6 +76,24 @@ export const OrderSummaryCard = () => {
 				<h3 className="headline-3">{totalPrice - discountPrice}</h3>
 			</div>
 
+			{/* Selected Address Section  */}
+			<div className="address__sec">
+				<div className="margin-8px">
+					<span>Address: </span>
+					{selectedAddress ? (
+						<span>
+							{`${selectedAddress?.name},
+					${selectedAddress?.address},
+					${selectedAddress?.city},
+					${selectedAddress?.state},
+					${selectedAddress?.pincode}`}
+						</span>
+					) : (
+						<span>No Address seleted.</span>
+					)}
+				</div>
+			</div>
+
 			{/* Order place */}
 			<div className="order__details-place padding-8px">
 				<p className="text__green">
@@ -71,8 +102,8 @@ export const OrderSummaryCard = () => {
 				</p>
 				<button
 					className="btns btn__primary margin__tb-8px border__rad-4px"
-					onClick={() => navigate("/checkout")}>
-					Checkout
+					onClick={placeOrderHandler}>
+					Place Order
 				</button>
 			</div>
 		</div>

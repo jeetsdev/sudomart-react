@@ -24,7 +24,7 @@ export const WishlistProvider = ({ children }) => {
 		if (authToken) {
 			try {
 				(async () => {
-					const res = await axios.get("api/user/wishlist", {
+					const res = await axios.get("/api/user/wishlist", {
 						headers: {
 							authorization: authToken,
 						},

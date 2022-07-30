@@ -12,7 +12,7 @@ export const ProductProvider = ({ children }) => {
 	useEffect(() => {
 		try {
 			(async () => {
-				const res = await axios.get("api/products");
+				const res = await axios.get("/api/products");
 				setProductData(res?.data.products);
 			})();
 		} catch (error) {
