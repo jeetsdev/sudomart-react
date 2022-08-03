@@ -116,6 +116,7 @@ export const AuthProvider = ({ children }) => {
 
 	// Login form handler here
 	const signUpFormHandler = async (sigUpData) => {
+		console.log('sigUpData: ', sigUpData);
 		if (validateEmailAndPass(sigUpData.email, sigUpData.password)) {
 			dispatch({
 				type: SET_ERROR,
@@ -150,7 +151,7 @@ export const AuthProvider = ({ children }) => {
 					toast.success(`Happy to have you ${createdUser?.userName}`);
 				}
 			} catch (error) {
-				toast.error("Some error occured in signup.");
+				toast.error("Email already exist.");
 			}
 		}
 	};

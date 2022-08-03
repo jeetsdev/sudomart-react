@@ -48,9 +48,9 @@ export const Order = () => {
 							{orderDetails.address?.address}
 						</p>
 						<p className="txt-sml">
-							{orderDetails.address?.city}
-							{orderDetails.address?.state}
-							{orderDetails.address?.country}
+							{orderDetails.address?.city},{" "}
+							{orderDetails.address?.state},{" "}
+							{orderDetails.address?.country},{" "}
 							{orderDetails.address?.pincode}
 						</p>
 						<p className="txt-sml">

@@ -154,9 +154,6 @@ export const Login = () => {
 						Sign up
 					</Link>
 				</p>
-				<Link to={"/forgot"} className="btns btn__link">
-					Forgot password?
-				</Link>
 			</div>
 		</div>
 	);

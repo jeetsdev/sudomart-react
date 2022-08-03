@@ -23,7 +23,7 @@ export const SignUp = () => {
 	const { SET_ERROR } = ACTION_TYPE;
 	const navigate = useNavigate();
 	const location = useLocation();
-	const fromLocation = location?.state?.from?.pathname || "/";
+	const fromLocation = location?.state?.from?.pathname || "/products";
 
 	const formSubmitHandler = (event) => {
 		event.preventDefault();
@@ -35,6 +35,16 @@ export const SignUp = () => {
 		return signupFormData.passType === "password"
 			? setsignupFormData({ ...signupFormData, passType: "text" })
 			: setsignupFormData({ ...signupFormData, passType: "password" });
+	};
+
+	// dummy data handler here
+	const testCredentialHandler = () => {
+		setsignupFormData({
+			...signupFormData,
+			userName: "Mr. Knight",
+			email: "wayne@gmail.com",
+			password: "mrnight@123",
+		});
 	};
 
 	useEffect(() => {
@@ -64,7 +74,7 @@ export const SignUp = () => {
 						className="margin__lr-8px"
 						placeholder="Enter Name"
 						required
-						value={signupFormData.name}
+						value={signupFormData.userName}
 						onChange={(event) =>
 							setsignupFormData({
 								...signupFormData,
@@ -132,9 +142,12 @@ export const SignUp = () => {
 						I agree to all the Terms & Conditions
 					</label>
 				</div>
-				<button className="btns btn__primary margin-1rem">
+				<button className="btns btn__primary btn-login margin-1rem border__rad-4px">
 					Sign Up
 				</button>
+				<p className="btns btn__link" onClick={testCredentialHandler}>
+					Use test credentials
+				</p>
 			</form>
 			<div className="center__flex flex__dir-col margin-1rem">
 				<p>
