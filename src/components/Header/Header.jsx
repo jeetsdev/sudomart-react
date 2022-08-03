@@ -3,6 +3,7 @@ import { useAuth, useCart, useWishlist } from "../../contexts";
 import { FaUserCircle } from "react-icons/fa";
 import { BsFillHeartFill, BsFillBagCheckFill } from "react-icons/bs";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+import { LogoImg } from "../../assets";
 
 export const Header = () => {
 	const { cartState } = useCart();
@@ -26,7 +27,8 @@ export const Header = () => {
 				<nav className="nav center__flex">
 					{/* Title section here */}
 					<div className="nav__title-sec">
-						<Link to={"/"}>
+						<Link to={"/"} className="center__flex">
+							<img src={LogoImg} alt="logo" className="logo-img"/>
 							<h3 className="headline-3 font-primary">
 								{" "}
 								SudoMart{" "}

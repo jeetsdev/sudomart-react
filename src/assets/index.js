@@ -23,6 +23,7 @@ import StickerThree from "./stickers/sticker-3.png";
 import StickerFour from "./stickers/sticker-4.png";
 import StickerFive from "./stickers/sticker-5.png";
 import ErrorImg from "./404.png";
+import LogoImg from "./logo.png";
 
 export {
 	TeesTwo,
@@ -50,4 +51,5 @@ export {
 	StickerFour,
 	StickerFive,
 	ErrorImg,
+	LogoImg,
 };
