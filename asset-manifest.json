@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/sudomart-react/static/css/main.17021796.css",
+    "main.js": "/sudomart-react/static/js/main.a41ea2d3.js",
+    "static/media/ipl-tshirt-2.png": "/sudomart-react/static/media/ipl-tshirt-2.a0e5f54acf51a05b9fe2.png",
+    "static/media/ipl-tshirt-1.png": "/sudomart-react/static/media/ipl-tshirt-1.1d74592fccfc87379bce.png",
+    "static/media/ipl-tshirt-3.png": "/sudomart-react/static/media/ipl-tshirt-3.3d62fb4587ee8675e8d2.png",
+    "static/media/ipl-tshirt-4.png": "/sudomart-react/static/media/ipl-tshirt-4.2d5f277bed21e0677f67.png",
+    "static/media/tees-4.png": "/sudomart-react/static/media/tees-4.136026701eeef57c2001.png",
+    "static/media/polo-tshirt-2.png": "/sudomart-react/static/media/polo-tshirt-2.3be053209bff4a4522cc.png",
+    "static/media/sticker-1.png": "/sudomart-react/static/media/sticker-1.e9148f29b95e7378cc13.png",
+    "static/media/polo-tshirt-1.png": "/sudomart-react/static/media/polo-tshirt-1.49ce2b943fdee2c01e90.png",
+    "static/media/hoodie-2.png": "/sudomart-react/static/media/hoodie-2.33d0ac93030d9eac7765.png",
+    "static/media/tees-9.png": "/sudomart-react/static/media/tees-9.b939531448844a556004.png",
+    "static/media/hoodie-4.png": "/sudomart-react/static/media/hoodie-4.fc87f80f3c76e89bca9f.png",
+    "static/media/tees-5.png": "/sudomart-react/static/media/tees-5.aeae277b33b139a50542.png",
+    "static/media/hoodie-1.png": "/sudomart-react/static/media/hoodie-1.b323800df86878f426bd.png",
+    "static/media/tees-6.png": "/sudomart-react/static/media/tees-6.032a8591c9ff86ec2006.png",
+    "static/media/sticker-5.png": "/sudomart-react/static/media/sticker-5.f705ce6a0c2299a5ca0a.png",
+    "static/media/tees-1.png": "/sudomart-react/static/media/tees-1.45bd16658dbf9985baec.png",
+    "static/media/tees-10.png": "/sudomart-react/static/media/tees-10.b669ea5b6758090fff20.png",
+    "static/media/hoodie-3.png": "/sudomart-react/static/media/hoodie-3.9bd4b2d7b3679ab28f8f.png",
+    "static/media/tees-2.png": "/sudomart-react/static/media/tees-2.3a6392d0ba51e20c0a07.png",
+    "static/media/tees-7.png": "/sudomart-react/static/media/tees-7.40f04a4eda6a2711822d.png",
+    "static/media/tees-8.png": "/sudomart-react/static/media/tees-8.a6724b468316e783247c.png",
+    "static/media/sticker-3.png": "/sudomart-react/static/media/sticker-3.9cb7e9f74bdb590c0e0f.png",
+    "static/media/sticker-4.png": "/sudomart-react/static/media/sticker-4.0c0106a1f61443e1e2f1.png",
+    "static/media/404.png": "/sudomart-react/static/media/404.d91755d5c9bfd74fe9c4.png",
+    "static/media/sticker-2.png": "/sudomart-react/static/media/sticker-2.130e185bfefcde644ade.png",
+    "static/media/logo.png": "/sudomart-react/static/media/logo.73e0076c899e8a2f7a32.png",
+    "index.html": "/sudomart-react/index.html",
+    "main.17021796.css.map": "/sudomart-react/static/css/main.17021796.css.map",
+    "main.a41ea2d3.js.map": "/sudomart-react/static/js/main.a41ea2d3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17021796.css",
+    "static/js/main.a41ea2d3.js"
+  ]
+}
